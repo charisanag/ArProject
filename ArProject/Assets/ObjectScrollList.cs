@@ -23,7 +23,7 @@ public class ObjectScrollList : MonoBehaviour {
 
     public ObjectPool toggleObjectPool;
 
-    private List<Item> cheeckedList= new List<Item>();
+    public static List<Item> cheeckedList= new List<Item>();
 
 
   
