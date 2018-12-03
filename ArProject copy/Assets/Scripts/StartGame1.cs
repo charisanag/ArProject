@@ -28,7 +28,7 @@ public class StartGame1 : MonoBehaviour {
 
     public void gameStart()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(5);
         foreach (Item i in ObjectScrollList.cheeckedList)
         {
             Debug.Log("Button clicked = " + i.itemName);
