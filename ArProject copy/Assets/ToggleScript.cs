@@ -7,7 +7,7 @@ public class ToggleScript : MonoBehaviour {
 
     public Text nameLabel;
     public Image iconImage;
-
+    public string itemId;
     private Item item;
     private ObjectScrollList scrollList;
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class ToggleScript : MonoBehaviour {
         item = currentItem;
         nameLabel.text = item.itemName;
         iconImage.sprite = item.icon;
-
+        itemId = item.itemId;
         scrollList = currentScrollList;
     }
 	

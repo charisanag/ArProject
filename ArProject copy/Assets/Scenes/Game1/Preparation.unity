@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -743,8 +743,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 775859415}
   m_HandleRect: {fileID: 775859414}
   m_Direction: 0
-  m_Value: 0.5
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1086,12 +1086,15 @@ MonoBehaviour:
   - itemName: Coffee Maker
     icon: {fileID: 21300000, guid: 59e5673f8b88ca844a6d8253902b8ef9, type: 3}
     state: 0
+    itemId: 0001
   - itemName: Keys
     icon: {fileID: 21300000, guid: 6d949ab179bae454ea26e94c63cdc3d7, type: 3}
     state: 0
+    itemId: 0002
   - itemName: Remote Control
     icon: {fileID: 21300000, guid: c4520b7c83e529042b0e81e5eb0a123b, type: 3}
     state: 0
+    itemId: 0003
   contentPanel: {fileID: 1127138888}
   done: {fileID: 933719237}
   toggleObjectPool: {fileID: 1673179815}

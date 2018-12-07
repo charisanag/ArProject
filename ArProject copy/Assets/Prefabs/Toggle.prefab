@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3415404fc0f8e4790f67993e9a72a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: {fileID: 114506585941355660}
   nameLabel: {fileID: 114131368750551538}
   iconImage: {fileID: 114400433309534598}
+  itemId: 
 --- !u!114 &114400433309534598
 MonoBehaviour:
   m_ObjectHideFlags: 1
