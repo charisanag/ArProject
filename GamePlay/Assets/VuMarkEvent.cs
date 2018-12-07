@@ -51,10 +51,7 @@ public class VuMarkEvent : MonoBehaviour {
        
         // Find and activate model by VuMark ID
         for (int i = 0; i < modelIdList.Count; i++) {
-            Debug.Log("--------------------------");
-         //  Debug.Log("ELAAA REEEEEE    " + modelIdList[i] );
-            Debug.Log("ELAAA REEEEEE    " + getVuMarkID(target) + "OPAAAAAA REEEEEE");
-            Debug.Log("--------------------------");
+     
             string s1 = getVuMarkID(target);
             string s2 = modelIdList[i];
          
@@ -62,7 +59,7 @@ public class VuMarkEvent : MonoBehaviour {
           
             if (s1.Equals(s2))
             {
-                Debug.Log("ELAAA REEEEEE    " );
+               
                 modelList [i].SetActive (true);
                
 				// Set model number
