@@ -11,6 +11,7 @@ public class Item
     public string itemName;
     public Sprite icon;
     public bool state;
+
 }
 
 public class ObjectScrollList : MonoBehaviour {
