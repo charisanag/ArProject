@@ -12,9 +12,9 @@ public class CatalogDisplay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        objectImage.sprite = page.artwork;
-        desctiption.text = page.name;
-        itemNumberText.text = page.itemNumber.ToString();
+//        objectImage.sprite = page.artwork;
+  //      desctiption.text = page.name;
+    //    itemNumberText.text = page.itemNumber.ToString();
 	}
 	
 	// Update is called once per frame
