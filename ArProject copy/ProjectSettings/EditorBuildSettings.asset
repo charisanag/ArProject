@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Game1/Preparation.unity
     guid: e2b74018e74de454c8400298cbfb2f9a
   - enabled: 0
-    path: Assets/Scenes/ObjectSelection.unity
-    guid: 073667dc9e8352d40b74d2446de9d8fa
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Game1/PlayMode.unity
     guid: aaeae8838da43be49ac8767589f257b3
@@ -21,12 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Game1/Game1Menu.unity
     guid: 3ba9b2ed7df01f3429fa3b9737c7d89e
   - enabled: 0
-    path: Assets/Scenes/Scene.unity
-    guid: 965b9142ddc284442ac35cc2109503f6
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Game1/Example.unity
     guid: 262925330a2343e4bb85c6f161744343
   - enabled: 1
     path: Assets/Scenes/CatalogItems/CatalogItem.unity
     guid: 152f11d9938aa43bab4ddbef87baf567
+  - enabled: 1
+    path: Assets/Scenes/Game1/GamePLay.unity
+    guid: 64b7dc86262d5453e877f26ac8edef81
   m_configObjects: {}

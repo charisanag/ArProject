@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//[CreateAssetMenu(fileName ="New Item", menuName ="Catalog Item")]
-
-//public class CatalogItem : ScriptableObject {
+//In this class rendering prefab item page content from list checklist to canvas
 public class CatalogItem : MonoBehaviour
     {
-        public Text nameLabel;
+    public Text nameLabel;
     public Image iconImage;
-    public string itemId;
+    public Text itemId;
    
 
     private Item item;
@@ -20,7 +18,7 @@ public class CatalogItem : MonoBehaviour
         item = currentItem;
         nameLabel.text = item.itemName;
         iconImage.sprite = item.icon;
-        itemId = item.itemId;
+        itemId.text = item.itemId;
         scrollList = currentScrollList;
     }
 

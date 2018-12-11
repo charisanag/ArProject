@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour {
 
     public Text itemNum;
+    public Canvas canvas;
 	void Start () {
 
         itemNum = GetComponentInParent<Text>();
@@ -20,5 +21,7 @@ public class ButtonManager : MonoBehaviour {
         PlayerPrefs.Save();
 
          Debug.Log("You select the item " + PlayerPrefs.GetString("CatalogSelection"));
-	}
+        // canvas.GetComponent<Canvas>().enabled = false;
+        SceneManager.LoadScene(sceneBuildIndex: 6);
+    }
 }

@@ -30,7 +30,7 @@ public class VuMarkEvent : MonoBehaviour {
                     Debug.Log ("ID: "+ getVuMarkID(vmb.VuMarkTarget));
                 }
         */
-        Debug.Log("ELLLLLLLLLLLLLLLLLLLLLLLLLL");
+      
 	}
 
 	private string getVuMarkID(VuMarkTarget vuMark){

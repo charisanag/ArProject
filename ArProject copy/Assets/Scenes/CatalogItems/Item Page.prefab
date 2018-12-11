@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224806015034602480}
   - component: {fileID: 222077757968333550}
   - component: {fileID: 114362593925222200}
-  - component: {fileID: 114514735347339696}
   - component: {fileID: 114321240327180216}
   m_Layer: 5
   m_Name: Item Page
@@ -184,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLabel: {fileID: 114686674680543382}
   iconImage: {fileID: 114044183163418910}
-  itemId: 
+  itemId: {fileID: 114722551919041758}
 --- !u!114 &114362593925222200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,21 +211,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114514735347339696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025831823647652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3152e2b2a2d904da699b7e1f65f96505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  page: {fileID: 11400000, guid: 5b089222eb2a547d59cf90ab90f7f551, type: 2}
-  objectImage: {fileID: 114044183163418910}
-  desctiption: {fileID: 114686674680543382}
-  itemNumberText: {fileID: 114722551919041758}
 --- !u!114 &114609305498397890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,7 +328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: itemNum
 --- !u!114 &114829600898622244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,7 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa28b9b3f3841be9215705cdb46810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNum: {fileID: 0}
+  itemNum: {fileID: 114722551919041758}
+  canvas: {fileID: 0}
 --- !u!222 &222077757968333550
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -530,7 +515,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025831823647652}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
