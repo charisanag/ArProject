@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour {
 	public void OnClickedButton () {
 
         PlayerPrefs.SetString("CatalogSelection", itemNum.text);
-       PlayerPrefs.Save();
+        PlayerPrefs.Save();
 
          Debug.Log("You select the item " + PlayerPrefs.GetString("CatalogSelection"));
 	}
