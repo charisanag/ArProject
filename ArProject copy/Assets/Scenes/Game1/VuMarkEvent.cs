@@ -11,6 +11,9 @@ public class VuMarkEvent : MonoBehaviour {
 	private int modelN;
 	private Vuforia.VuMarkManager vuMarkManager;
 
+    public string id;
+    public Canvas canvas;
+
 
 	void Start () {
 		// Set VuMarkManager
@@ -30,6 +33,7 @@ public class VuMarkEvent : MonoBehaviour {
                     Debug.Log ("ID: "+ getVuMarkID(vmb.VuMarkTarget));
                 }
         */
+        Debug.Log("OOOOOOOOOOOO");
       
 	}
 
@@ -47,26 +51,29 @@ public class VuMarkEvent : MonoBehaviour {
 	}
 
 	public void onVuMarkDetected(VuMarkTarget target){
+        id = PlayerPrefs.GetString("CatalogSelection");
 		Debug.Log ("Detected ID: "+ getVuMarkID(target));
-        //		Debug.Log (target.Template.VuMarkUserData);
-       
-        // Find and activate model by VuMark ID
-        for (int i = 0; i < modelIdList.Count; i++) {
-     
+
+        for (int i = 0; i < modelIdList.Count; i++)
+        {
             string s1 = getVuMarkID(target);
             string s2 = modelIdList[i];
-         
-           
-          
-            if (s1.Equals(s2))
+
+
+            if (s1.Equals(s2) )
             {
-               
-                modelList [i].SetActive (true);
-               
-				// Set model number
-				modelN = i;
-			}
-		}
+                if (id.Equals(s2))
+                {
+                    modelList[i].SetActive(true);
+
+                    // Set model number
+                    modelN = i;
+                }else{
+                    Debug.Log("ELAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                }
+            }
+        }
+        
 	}
 
 	public void onVuMarkLost(VuMarkTarget target){
