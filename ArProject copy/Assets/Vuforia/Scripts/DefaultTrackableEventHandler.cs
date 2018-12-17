@@ -8,6 +8,7 @@ Confidential and Proprietary - Protected under copyright and other laws.
 
 using UnityEngine;
 using Vuforia;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A custom handler that implements the ITrackableEventHandler interface.
@@ -78,10 +79,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingFound()
     {
+      
+        SceneManager.LoadScene(sceneBuildIndex: 5);
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
-
+       
         // Enable rendering:
         foreach (var component in rendererComponents)
             component.enabled = true;

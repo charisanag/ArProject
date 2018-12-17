@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
+using UnityEngine.SceneManagement;
 
 public class VuMarkEvent : MonoBehaviour {
 
@@ -12,16 +13,17 @@ public class VuMarkEvent : MonoBehaviour {
 	private Vuforia.VuMarkManager vuMarkManager;
 
     public string id;
-    public Canvas canvas;
+    public GameObject canvas;
 
 
 	void Start () {
-		// Set VuMarkManager
-		vuMarkManager =TrackerManager.Instance.GetStateManager().GetVuMarkManager();
+        // Set VuMarkManager
+        canvas.SetActive(false);
+        vuMarkManager =TrackerManager.Instance.GetStateManager().GetVuMarkManager();
 		// Set VuMark detected and lost behavior methods
 		vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
 		vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
-
+       
 		// Deactivate all models 
 		foreach(GameObject item in modelList){
 			item.SetActive (false);
@@ -33,9 +35,10 @@ public class VuMarkEvent : MonoBehaviour {
                     Debug.Log ("ID: "+ getVuMarkID(vmb.VuMarkTarget));
                 }
         */
-        Debug.Log("OOOOOOOOOOOO");
-      
-	}
+        
+
+
+    }
 
 	private string getVuMarkID(VuMarkTarget vuMark){
 		switch (vuMark.InstanceId.DataType){
@@ -51,35 +54,45 @@ public class VuMarkEvent : MonoBehaviour {
 	}
 
 	public void onVuMarkDetected(VuMarkTarget target){
-        id = PlayerPrefs.GetString("CatalogSelection");
-		Debug.Log ("Detected ID: "+ getVuMarkID(target));
+        PlayerPrefs.SetString("VuMarkTarget", getVuMarkID(target));
+        PlayerPrefs.Save();
+       // canvas.SetActive(true);
 
+        //  id = PlayerPrefs.GetString("CatalogSelection");
+        //Debug.Log ("Detected ID: "+ getVuMarkID(target));
+
+
+
+    }
+
+    public void onVuMarkLost(VuMarkTarget target){
+        SceneManager.LoadScene(sceneBuildIndex: 6);
+        Debug.Log ("Lost ID: "+ getVuMarkID(target));
+        canvas.SetActive(false);
+        // Deactivate model by model number
+        modelList [modelN].SetActive (false);
+	}
+
+
+    public void SetActive(string targ)
+    {
         for (int i = 0; i < modelIdList.Count; i++)
         {
-            string s1 = getVuMarkID(target);
+           // string s1 = getVuMarkID(targ);
             string s2 = modelIdList[i];
 
 
-            if (s1.Equals(s2) )
+            if (targ.Equals(s2))
             {
-                if (id.Equals(s2))
-                {
-                    modelList[i].SetActive(true);
+         
+                modelList[i].SetActive(true);
 
-                    // Set model number
-                    modelN = i;
-                }else{
-                    Debug.Log("ELAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-                }
+                // Set model number
+                modelN = i;
+
             }
         }
-        
-	}
+    }
 
-	public void onVuMarkLost(VuMarkTarget target){
-		Debug.Log ("Lost ID: "+ getVuMarkID(target));
 
-		// Deactivate model by model number
-		modelList [modelN].SetActive (false);
-	}
 }
