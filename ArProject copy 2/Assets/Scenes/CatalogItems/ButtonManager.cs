@@ -2,30 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using UnityEngine.SceneManagement;
+using Vuforia;
 
-public class ButtonManager : MonoBehaviour {
+public class ButtonManager : MonoBehaviour
+{
 
     public Text itemNum;
-    public Canvas canvas;
-    //string id;
-	void Start () {
+    public static event Action<ButtonManager> onClickItem = delegate { };
+
+    public void Awake()
+    {
+
+    }
+    void Start()
+    {
 
         itemNum = GetComponentInParent<Text>();
 
-	}
-	
 
-	public void OnClickedButton () {
-
-        // PlayerPrefs.SetString("CatalogSelection", itemNum.text);
-        // PlayerPrefs.Save();
-       // id = PlayerPrefs.GetString("VuMarkTarget");
-        //VuMarkEvent vu = new VuMarkEvent();
-       // vu.SetActive(id);
-      //   Debug.Log("You select the item " + PlayerPrefs.GetString("CatalogSelection"));
-        // canvas.GetComponent<Canvas>().enabled = false;
-       // SceneManager.LoadScene(sceneBuildIndex: 6);
-       
     }
+
+    public void OnClickedButton()
+    {
+        onClickItem(this);
+    }
+
 }

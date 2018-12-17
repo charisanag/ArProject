@@ -20,17 +20,18 @@ public class CatalogPbjectScrollList : MonoBehaviour {
             a.transform.SetParent(contentPanel.transform, false);
             CatalogItem catalog = a.GetComponent<CatalogItem>();
             catalog.Setup(item, this);
-            //Setting the toggle Interaction
+            
         }
     }
 
-
+    
     void Start()
     {
       
         CreateA();
     }
 
+    
 
 
    
