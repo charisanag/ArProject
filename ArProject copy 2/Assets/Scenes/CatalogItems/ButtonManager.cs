@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
 {
 
     public Text itemNum;
+    //for using onclicked button in VumarkEvent 
     public static event Action<ButtonManager> onClickItem = delegate { };
 
     public void Awake()

@@ -13,6 +13,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
 	private int modelN;
     private Vuforia.VuMarkManager vuMarkManager;
+    private string targetFound = null;
     #region PRIVATE_MEMBER_VARIABLES
 
     
@@ -35,7 +36,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     {
         //onClick event get text from item and render object if exists
         SetActive(obj.itemNum.text);
-        canvas.SetActive(false);
+      
     }
 
     void Start () {
@@ -77,10 +78,18 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 	}
 
     public void onVuMarkDetected(VuMarkTarget target){
-
+        targetFound = getVuMarkID(target);
         // Enable canvas objects
-         stateCanvas = true;
-        showGUI(stateCanvas);
+        for (int i = 0; i < modelIdList.Count; i++)
+        {
+            if (modelIdList[i].Equals(targetFound))
+            {
+                Debug.Log("*************************************************");
+                stateCanvas = true;
+                showGUI(stateCanvas);
+            }
+        }
+          
         
        // SetActive(getVuMarkID(target));
 
@@ -89,29 +98,34 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     private void onVuMarkLost(VuMarkTarget target){
     
         //Debug.Log ("Lost ID: "+ getVuMarkID(target));
-        //stateCanvas = false;
-        //showGUI(stateCanvas);
+        stateCanvas = false;
+        showGUI(stateCanvas);
         // Deactivate model by model number
   
-        //modelList [modelN].SetActive (false);
+        modelList [modelN].SetActive (false);
 	}
   
 
-    public void SetActive(string target)
+    public void SetActive(string selectedItem)
     {
-        for (int i = 0; i < modelIdList.Count; i++)
+        Debug.Log("----------------->  " + selectedItem);
+        if (targetFound != null)
         {
-           // string s1 = getVuMarkID(targ);
-            string s2 = modelIdList[i];
 
-
-            if (target.Equals(s2))
+            for (int i = 0; i < modelIdList.Count; i++)
             {
-         
-                modelList[i].SetActive(true);
-                // Set model number
-                modelN = i;
+                // string s1 = getVuMarkID(targ);
+                string s2 = modelIdList[i];
 
+                if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) && modelList[i].active==false)
+                {
+                    canvas.SetActive(false);
+                    modelList[i].SetActive(true);
+
+                    // Set model number
+                    modelN = i;
+
+                }
             }
         }
     }
