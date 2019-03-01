@@ -10,8 +10,12 @@ public class Item
 {
     public string itemName;
     public Sprite icon;
-    public bool state;
+    public bool state = false;
     public string itemId;
+
+    public void setState(bool state){
+        this.state = state;
+    }
 
 }
 
@@ -32,8 +36,7 @@ public class ObjectScrollList : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //done = GetComponent<Button>();
-        //done.onClick.AddListener(() => DoneButtonClickListener());
+   
         RefreshDisplay();
 
         
