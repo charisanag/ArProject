@@ -62,10 +62,8 @@ public class ObjectScrollList : MonoBehaviour {
 
             toggleButton.onValueChanged.AddListener(delegate
             {
-                // Debug.Log("Button clicked = " + item.itemName);
                 if (toggleButton.isOn == true)
                 {
-                  //  Debug.Log("Button clicked = " + item.itemName);
                      cheeckedList.Add(item);
 
                 }

@@ -10,8 +10,9 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
 	public List<GameObject> modelList;
     public List<string> modelIdList;
+    public static event Action<SideFoundItem> onFoundObjectListener = delegate { };
 
-	private int modelN;
+    private int modelN;
     private Vuforia.VuMarkManager vuMarkManager;
     private string targetFound = null;
     #region PRIVATE_MEMBER_VARIABLES
@@ -32,10 +33,19 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
         ButtonManager.onClickItem += ButtonManager_onClickItem;
     }
 
+    private void SideFoundItem_OnFoundObjectListener(SideFoundItem obj)
+    {
+        obj.foundstate.text = "Βρέθηκε";
+    }
+
+
+   
+
+
     private void ButtonManager_onClickItem(ButtonManager obj)
     {
         //onClick event get text from item and render object if exists
-        SetActive(obj.itemNum.text);
+        SetActiveObject(obj.itemNum.text);
       
     }
 
@@ -84,7 +94,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
         {
             if (modelIdList[i].Equals(targetFound))
             {
-                Debug.Log("*************************************************");
+            
                 stateCanvas = true;
                 showGUI(stateCanvas);
             }
@@ -106,9 +116,8 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 	}
   
 
-    public void SetActive(string selectedItem)
+    public void SetActiveObject(string selectedItem)
     {
-        Debug.Log("----------------->  " + selectedItem);
         if (targetFound != null)
         {
 
@@ -124,6 +133,9 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
                     // Set model number
                     modelN = i;
+                    //change state of checklist for sidepanel of objects that have been found
+                   
+                   
 
                 }
             }
@@ -132,7 +144,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
    
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
-       /* Debug.Log("KSANAVRETHIKEEEE");
+       /* 
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED)
         {
