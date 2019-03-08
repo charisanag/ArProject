@@ -13,8 +13,7 @@ public class SideFoundItem : MonoBehaviour {
 
     private Item item;
     private FoundObjectScrollList scrollList;
-    delegate void OnFoundObjectListener(string state);
-    OnFoundObjectListener onFoundObjectListener;
+
 
     public void Setup(Item currentItem, FoundObjectScrollList currentScrollList)
     {

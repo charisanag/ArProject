@@ -10,22 +10,25 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
 	public List<GameObject> modelList;
     public List<string> modelIdList;
-    public static event Action<SideFoundItem> onFoundObjectListener = delegate { };
+   
 
     private int modelN;
     private Vuforia.VuMarkManager vuMarkManager;
     private string targetFound = null;
     #region PRIVATE_MEMBER_VARIABLES
 
-    
+
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
+    public delegate void OnUpdatingSideItem();
+    public static OnUpdatingSideItem sideItemDelegate;
 
 
     public GameObject canvas;
 
     private bool stateCanvas = false;
+    public event Action ScoChange;
 
     public void Awake()
     {  
@@ -33,10 +36,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
         ButtonManager.onClickItem += ButtonManager_onClickItem;
     }
 
-    private void SideFoundItem_OnFoundObjectListener(SideFoundItem obj)
-    {
-        obj.foundstate.text = "Βρέθηκε";
-    }
+   
 
 
    
@@ -133,9 +133,18 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
                     // Set model number
                     modelN = i;
+                   
                     //change state of checklist for sidepanel of objects that have been found
-                   
-                   
+                    for (int j = 0; j < ObjectScrollList.cheeckedList.Count; j++){
+
+                        if (ObjectScrollList.cheeckedList[j].itemId.Equals(selectedItem)){
+                            ObjectScrollList.cheeckedList[j].setState(true);
+                           
+                            
+                        }
+                    }
+                        
+
 
                 }
             }
@@ -168,5 +177,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     }
 
 
-  
+    public void UpdateSideItem(){
+        sideItemDelegate();
+    }
 }

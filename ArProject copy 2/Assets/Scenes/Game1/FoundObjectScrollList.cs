@@ -33,5 +33,9 @@ public class FoundObjectScrollList : MonoBehaviour {
         Create();
     }
 
+     void Update()
+    {
+        Create();
+    }
 
 }
