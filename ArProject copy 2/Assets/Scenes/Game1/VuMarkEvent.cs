@@ -141,7 +141,9 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
                             ObjectScrollList.cheeckedList[j].setState(true);
                             FoundObjectScrollList p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
                             p.updateItem(selectedItem);
-
+                            if(p.gameover()==true){
+                                Debug.Log("WIIIIIINNNNN");
+                            }
                             
                         }
                     }

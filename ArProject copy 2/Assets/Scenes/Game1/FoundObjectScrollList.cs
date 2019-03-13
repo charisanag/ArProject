@@ -37,9 +37,7 @@ public class FoundObjectScrollList : MonoBehaviour {
 
     public void updateItem(string itemToUpdate)
     {
-        Debug.Log(itemToUpdate);
         for (int j = 0; j < selected.Count; j++){
-            Debug.Log(selected[j].GetItem().itemId);
             if (selected[j].GetItem().itemId.Equals(itemToUpdate)){
 
                 selected[j].updateItem();
@@ -48,4 +46,20 @@ public class FoundObjectScrollList : MonoBehaviour {
         }
     }
 
+    public bool gameover(){
+        bool win=false;
+        for (int j = 0; j < selected.Count; j++)
+        {
+            if (selected[j].GetItem().state==true)
+            {
+
+                win = true;
+
+            }else{
+                win = false;
+                break;
+            }
+        }
+        return win;
+    }
 }

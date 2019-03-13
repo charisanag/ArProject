@@ -30,6 +30,7 @@ public class SideFoundItem : MonoBehaviour {
 
     public void updateItem()
     {
+        item.setState(true);
         foundstate.text = "Βρέθηκε";
 
     }
