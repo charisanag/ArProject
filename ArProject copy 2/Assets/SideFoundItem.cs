@@ -17,22 +17,24 @@ public class SideFoundItem : MonoBehaviour {
 
     public void Setup(Item currentItem, FoundObjectScrollList currentScrollList)
     {
-        if (currentItem.state == false)
-        {
+       
             item = currentItem;
             itemName.text = item.itemName;
             iconImage.sprite = item.icon;
             foundstate.text = "Δεν βρέθηκε";
             //itemId.text = item.itemId;
             scrollList = currentScrollList;
-        }else{
-            item = currentItem;
-            itemName.text = item.itemName;
-            iconImage.sprite = item.icon;
-            foundstate.text = "Βρέθηκε";
-            scrollList = currentScrollList;
-        }
+        
        
+    }
+
+    public void updateItem()
+    {
+        foundstate.text = "Βρέθηκε";
+
+    }
+    public Item GetItem(){
+        return item;
     }
    
 
