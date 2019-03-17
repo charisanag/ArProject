@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     //for using onclicked button in VumarkEvent 
     public static event Action<ButtonManager> onClickItem = delegate { };
 
+
     public void Awake()
     {
 

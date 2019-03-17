@@ -26,6 +26,8 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
 
     public GameObject canvas;
+    public GameObject finishedGameDialog;
+    public GameObject sidePanelUI;
 
     private bool stateCanvas = false;
     public event Action ScoChange;
@@ -50,6 +52,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     }
 
     void Start () {
+
         // Set VuMarkManager
         vuMarkManager =TrackerManager.Instance.GetStateManager().GetVuMarkManager();
         // Set VuMark detected and lost behavior methods
@@ -142,7 +145,10 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
                             FoundObjectScrollList p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
                             p.updateItem(selectedItem);
                             if(p.gameover()==true){
-                                Debug.Log("WIIIIIINNNNN");
+                                finishedGameDialog.SetActive(true);
+                                sidePanelUI.SetActive(false);
+                                ObjectScrollList.cheeckedList = new List<Item>();
+                                TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                             }
                             
                         }
