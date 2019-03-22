@@ -9,6 +9,8 @@ public class CatalogItem : MonoBehaviour
     public Text nameLabel;
     public Image iconImage;
     public Text itemId;
+    public Sprite imgCorrect;
+    public Sprite imgDefault;
    
 
     private Item item;
