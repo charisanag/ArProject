@@ -11,6 +11,15 @@ public class Sc1Item
     private bool found = false;
     public int stepText = 0;
     private Sprite icon;
+    public string objectID;
+
+    public void setObjectID(string objectID)
+    {
+        this.objectID = objectID;
+    }
+    public string getObjectID() {
+        return objectID; 
+    }
 
     public void setFound(bool found)
     {
@@ -29,8 +38,17 @@ public class SC1Sidepanel : MonoBehaviour {
     public GameObject b;
     public List<Sc1Item> sc1itemList;
 
+    private List<int> stepList = new List<int>();
+
     void Start()
     {
+
+        foreach(Sc1Item it in sc1itemList) {
+
+            stepList.Add(it.stepText);
+             
+        }
+
         //shuffle list before setup
         for (int j = 0; j < sc1itemList.Count; j++)
         {
@@ -57,5 +75,15 @@ public class SC1Sidepanel : MonoBehaviour {
     void Update()
     {
 
+    }
+
+    public List<Sc1Item> getSC1List()
+    {
+        return sc1itemList;
+    }
+
+    public List<int> getStepList()
+    {
+        return stepList;
     }
 }

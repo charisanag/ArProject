@@ -9,6 +9,20 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     public List<string> modelIdList;
 
     Vuforia.VuMarkManager vuMarkManager;
+    SC1Sidepanel sidepanelobject;
+
+
+
+    public void Awake()
+    {
+        SCButtonManager.onClickItem += SCButtonManager_OnClickItem;
+    }
+
+    void SCButtonManager_OnClickItem(SCButtonManager obj)
+    {
+
+    }
+
 
     // Use this for initialization
     void Start () {
@@ -16,13 +30,28 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
         // Set VuMark detected and lost behavior methods
         vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
         vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
+
+        //setup sidepanel for interaction
+        sidepanelobject = (SC1Sidepanel)FindObjectOfType(typeof(SC1Sidepanel));
+        List<Sc1Item> sc1list = sidepanelobject.getSC1List();
+        foreach (GameObject item in modelList)
+        {
+            foreach(Sc1Item it in sc1list)
+            {
+
+                if (it.getFound().Equals(false))
+                {
+                    item.SetActive(false);
+                }
+            }
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-   
+
 
     private void onVuMarkDetected(VuMarkTarget target)
     {
@@ -38,5 +67,18 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
         //throw new System.NotImplementedException();
     }
 
+    private string getVuMarkID(VuMarkTarget vuMark)
+    {
+        switch (vuMark.InstanceId.DataType)
+        {
+            case InstanceIdType.BYTES:
+                return vuMark.InstanceId.HexStringValue;
+            case InstanceIdType.STRING:
+                return vuMark.InstanceId.StringValue;
+            case InstanceIdType.NUMERIC:
+                return vuMark.InstanceId.NumericValue.ToString();
+        }
 
+        return null;
+    }
 }
