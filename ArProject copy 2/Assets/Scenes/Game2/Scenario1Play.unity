@@ -361,7 +361,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2136433643}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1272,17 +1272,17 @@ MonoBehaviour:
   - todoText: "\u0392\u03C1\u03AD\u03C2 \u03C4\u03BF \u03BA\u03B1\u03BB\u03AC\u03B8\u03B9
       \u03B1\u03C0\u03BB\u03CD\u03C4\u03C9\u03BD"
     stepText: 1
-    objectID: 1000
+    objectID: 1111
   - todoText: "\u0392\u03C1\u03AD\u03C2 \u03C4\u03BF \u03C0\u03BB\u03C5\u03BD\u03C4\u03AE\u03C1\u03B9\u03BF
       \u03C1\u03BF\u03CD\u03C7\u03C9\u03BD "
     stepText: 2
-    objectID: 2000
+    objectID: 2222
   - todoText: "\u0392\u03C1\u03AD\u03C2 \u03C4\u03BF \u03B1\u03C0\u03BF\u03C1\u03C1\u03C5\u03C0\u03B1\u03BD\u03C4\u03B9\u03BA\u03CC"
     stepText: 3
-    objectID: 3000
+    objectID: 3333
   - todoText: "\u0392\u03C1\u03AD\u03C2 \u03C4\u03BF \u03BC\u03B1\u03BB\u03B1\u03BA\u03C4\u03B9\u03BA\u03CC"
     stepText: 4
-    objectID: 4000
+    objectID: 4444
 --- !u!224 &972414151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1299,7 +1299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000008758395}
+  m_AnchoredPosition: {x: 0, y: 0.000030851257}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &972414157
@@ -1589,10 +1589,10 @@ MonoBehaviour:
   - {fileID: 1102713372}
   - {fileID: 2012154787}
   modelIdList:
-  - 0000
   - 1111
-  - 1111
-  - 1111
+  - 2222
+  - 3333
+  - 4444
   comfirmObjectCanvas: {fileID: 336471510}
 --- !u!1 &1102713372
 GameObject:
@@ -1623,33 +1623,6 @@ Transform:
   m_Father: {fileID: 1192347226}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1159676881
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 'Game2Material
-
-    14794'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 626125ca8e25fa2c068f20cf6e9cf3d4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1192347220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,7 +1665,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 1159676881}
+  - {fileID: 2058126335}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2335,6 +2308,33 @@ Transform:
   m_Father: {fileID: 1192347226}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &2058126335
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 'Game2Material
+
+    17142'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 626125ca8e25fa2c068f20cf6e9cf3d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &2066634034
 GameObject:
   m_ObjectHideFlags: 0

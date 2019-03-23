@@ -114,7 +114,7 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
                     //set model number
                     modelN = i;
 
-                    modelList[i].SetActive(true);
+                    modelList[0].SetActive(true);
 
                 }   
             }
