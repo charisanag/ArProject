@@ -11,6 +11,11 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     Vuforia.VuMarkManager vuMarkManager;
     SC1Sidepanel sidepanelobject;
 
+    private string targetFound = null;
+
+    public GameObject comfirmObjectCanvas;
+    private bool stateCanvas = false;
+    private int modelN;
 
 
     public void Awake()
@@ -20,7 +25,7 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
 
     void SCButtonManager_OnClickItem(SCButtonManager obj)
     {
-
+        ObjectFound();
     }
 
 
@@ -55,12 +60,25 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
 
     private void onVuMarkDetected(VuMarkTarget target)
     {
-        
+        targetFound = getVuMarkID(target);
+        for (int i = 0; i < modelIdList.Count; i++)
+        {
+            if (modelIdList[i].Equals(targetFound))
+            {
+
+                stateCanvas = true;
+                showGUI(stateCanvas);
+            }
+        }
     }
 
     private void onVuMarkLost(VuMarkTarget target)
     {
+        stateCanvas = false;
+        showGUI(stateCanvas);
+        // Deactivate model by model number
 
+        modelList[modelN].SetActive(false);
     }
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
@@ -80,5 +98,38 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
         }
 
         return null;
+    }
+
+    public void ObjectFound()
+    {
+        List<Sc1Item> sc1list = sidepanelobject.getSC1List();
+        if (targetFound != null)
+        {
+            Sc1Item itemTofind = sc1list[sidepanelobject.getCurrentPosition()];
+           for (int i=0; i < modelIdList.Count; i++)
+            {
+                string s2 = modelIdList[i];
+                if (s2.Equals(itemTofind.getObjectID()) && modelList[i].active == false)
+                {
+                    //set model number
+                    modelN = i;
+
+                    modelList[i].SetActive(true);
+
+                }   
+            }
+        }
+    }
+
+    public void showGUI(bool showgui)
+    {
+        if (showgui == false)
+        {
+            comfirmObjectCanvas.SetActive(false);
+        }
+        else
+        {
+            comfirmObjectCanvas.SetActive(true);
+        }
     }
 }

@@ -29,6 +29,11 @@ public class Sc1Item
     {
         return found;
     }
+
+    public int getStepText()
+    {
+        return stepText;
+    }
 }
 public class SC1Sidepanel : MonoBehaviour {
 
@@ -39,6 +44,7 @@ public class SC1Sidepanel : MonoBehaviour {
     public List<Sc1Item> sc1itemList;
 
     private List<int> stepList = new List<int>();
+    
 
     void Start()
     {
@@ -85,5 +91,21 @@ public class SC1Sidepanel : MonoBehaviour {
     public List<int> getStepList()
     {
         return stepList;
+    }
+
+    //return the position from the array combinig with the step position
+    public int getCurrentPosition()
+    {
+        int position=-1;
+        foreach(Sc1Item it in sc1itemList)
+        {
+            if (it.getFound() == false)
+            {
+                
+                position = it.stepText-1;
+                break;
+            }
+        }
+        return position;
     }
 }
