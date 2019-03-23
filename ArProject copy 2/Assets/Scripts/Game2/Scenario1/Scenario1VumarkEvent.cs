@@ -109,7 +109,7 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
            for (int i=0; i < modelIdList.Count; i++)
             {
                 string s2 = modelIdList[i];
-                if (s2.Equals(itemTofind.getObjectID()) && modelList[i].active == false)
+                if (s2.Equals(itemTofind.getObjectID()) && itemTofind.getObjectID().Equals(targetFound) && modelList[i].active == false)
                 {
                     //set model number
                     modelN = i;
