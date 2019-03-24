@@ -12,8 +12,10 @@ public class SCButtonManager : MonoBehaviour {
         text = GetComponentInParent<Text>();
     }
 	
-	// Update is called once per frame
-	void Update () {
+
+
+    public void OnClickedButton()
+    {
         onClickItem(this);
     }
 }

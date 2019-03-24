@@ -12,6 +12,7 @@ public class Sc1Item
     public int stepText = 0;
     private Sprite icon;
     public string objectID;
+    private GameObject obj = null;
 
     public void setObjectID(string objectID)
     {
@@ -34,6 +35,13 @@ public class Sc1Item
     {
         return stepText;
     }
+
+    public void setGameObject(GameObject obj)
+    {
+        this.obj = obj;
+    }
+    
+    
 }
 public class SC1Sidepanel : MonoBehaviour {
 
@@ -42,8 +50,10 @@ public class SC1Sidepanel : MonoBehaviour {
     public Transform contentPanel;
     public GameObject b;
     public List<Sc1Item> sc1itemList;
+    private int stepPosition = 0;
+    private List<SC1itemOption> selected = new List<SC1itemOption>();
 
-    private List<int> stepList = new List<int>();
+    private List<Sc1Item> tempStepList = new List<Sc1Item>();
     
 
     void Start()
@@ -51,7 +61,7 @@ public class SC1Sidepanel : MonoBehaviour {
 
         foreach(Sc1Item it in sc1itemList) {
 
-            stepList.Add(it.stepText);
+            tempStepList.Add(it);
              
         }
 
@@ -71,41 +81,48 @@ public class SC1Sidepanel : MonoBehaviour {
             a.transform.SetParent(contentPanel.transform, false);
             SC1itemOption itemlist = a.GetComponent<SC1itemOption>();
             itemlist.Setup(item, this);
+            selected.Add(itemlist);
 
         }
        
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+  
 
     public List<Sc1Item> getSC1List()
     {
         return sc1itemList;
     }
 
-    public List<int> getStepList()
-    {
-        return stepList;
-    }
 
     //return the position from the array combinig with the step position
-    public int getCurrentPosition()
+    public Sc1Item getItemToBeFound()
     {
-        int position=-1;
-        foreach(Sc1Item it in sc1itemList)
+        return tempStepList[stepPosition];
+    }
+
+    public void updateItem(Sc1Item itemUP)
+    {
+        foreach(SC1itemOption it in selected)
         {
-            if (it.getFound() == false)
-            {
-                
-                position = it.stepText-1;
-                break;
+            if (it.GetSc1Item().getObjectID().Equals(itemUP.objectID)){
+                it.updateItem();
+                stepPosition++;
             }
         }
-        return position;
+    }
+
+    public bool itemIsFounded(string itemid)
+    {
+        bool fnd = false;
+        foreach(Sc1Item it in sc1itemList)
+        {
+            if (it.getObjectID().Equals(itemid) && it.getFound()==true)
+            {
+                fnd = true;
+            }
+        }
+        return fnd;
     }
 }

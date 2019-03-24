@@ -63,11 +63,17 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
         targetFound = getVuMarkID(target);
         for (int i = 0; i < modelIdList.Count; i++)
         {
-            if (modelIdList[i].Equals(targetFound))
+            if (modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound)==false )
             {
-
+                modelList[0].SetActive(false);
+                modelList[1].SetActive(true);
                 stateCanvas = true;
                 showGUI(stateCanvas);
+            }
+            else if(modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound) == true)
+            {
+                modelList[0].SetActive(true);
+                modelList[1].SetActive(false);
             }
         }
     }
@@ -105,18 +111,32 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
         List<Sc1Item> sc1list = sidepanelobject.getSC1List();
         if (targetFound != null)
         {
-            Sc1Item itemTofind = sc1list[sidepanelobject.getCurrentPosition()];
+            Debug.Log(targetFound + "   TargetFound-------");
+
+            Sc1Item itemTofind = sidepanelobject.getItemToBeFound();
+   
+            bool found = false;
            for (int i=0; i < modelIdList.Count; i++)
             {
                 string s2 = modelIdList[i];
-                if (s2.Equals(itemTofind.getObjectID()) && itemTofind.getObjectID().Equals(targetFound) && modelList[i].active == false)
+                if (s2.Equals(itemTofind.getObjectID()) && itemTofind.getObjectID().Equals(targetFound) )
                 {
                     //set model number
-                    modelN = i;
-
+                    modelN = 0;
+                    modelList[1].SetActive(false);
                     modelList[0].SetActive(true);
-
+                   
+                    sidepanelobject.updateItem(itemTofind);
+                  
+                    comfirmObjectCanvas.SetActive(false);
+                     found = true;
                 }   
+            }
+           if(found == false)
+            {
+                modelN = 1;
+                modelList[1].SetActive(true);
+                comfirmObjectCanvas.SetActive(false);
             }
         }
     }

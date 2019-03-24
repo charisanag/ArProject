@@ -27,6 +27,7 @@ public class SC1itemOption : MonoBehaviour {
     {
         stepText.text = item.stepText + "/4";
         stateImage.sprite = imgCorrect;
+        item.setFound(true);
     }
 
     public Sc1Item GetSc1Item()
