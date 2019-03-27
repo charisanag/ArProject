@@ -125,4 +125,30 @@ public class SC1Sidepanel : MonoBehaviour {
         }
         return fnd;
     }
+
+    public bool GameOver()
+    {
+
+        return true;
+    }
+
+    public bool win()
+    {
+        bool w = false;
+        for (int j = 0; j < selected.Count; j++)
+        {
+            if (selected[j].GetSc1Item().getFound() == true)
+            {
+
+                w = true;
+
+            }
+            else
+            {
+                w = false;
+                break;
+            }
+        }
+        return w;
+    }
 }

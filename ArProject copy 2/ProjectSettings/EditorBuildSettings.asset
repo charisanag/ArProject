@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game1/GamePLay.unity
     guid: 64b7dc86262d5453e877f26ac8edef81
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario1Play.unity
+    guid: 3ebcfb10cb4b04a91b3ca4e525d6876d
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario1Preperation.unity
+    guid: f2f094a8bc4394d7aa7c7adb5b02a991
+  - enabled: 1
+    path: Assets/Scenes/Game2/ScenarioSelection.unity
+    guid: 3ce160294de3b574b91470cfd400f833
   m_configObjects: {}

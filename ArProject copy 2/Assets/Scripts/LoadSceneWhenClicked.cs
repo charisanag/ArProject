@@ -12,6 +12,6 @@ public class LoadSceneWhenClicked : MonoBehaviour {
 
     public void LoadSceneFromStart(int sceneIdx)
     {
-       // Application.loadedLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

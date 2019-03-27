@@ -14,6 +14,8 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     private string targetFound = null;
 
     public GameObject comfirmObjectCanvas;
+    public GameObject winfinishDialog;
+    public GameObject sidepanelCanvas;
     private bool stateCanvas = false;
     private int modelN;
 
@@ -61,17 +63,20 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     private void onVuMarkDetected(VuMarkTarget target)
     {
         targetFound = getVuMarkID(target);
+        Debug.Log(targetFound);
         for (int i = 0; i < modelIdList.Count; i++)
         {
             if (modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound)==false )
             {
                 modelList[0].SetActive(false);
                 modelList[1].SetActive(true);
-                stateCanvas = true;
-                showGUI(stateCanvas);
+                comfirmObjectCanvas.SetActive(true);
+                //  stateCanvas = true;
+                //  showGUI(stateCanvas);
             }
             else if(modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound) == true)
             {
+                comfirmObjectCanvas.SetActive(false);
                 modelList[0].SetActive(true);
                 modelList[1].SetActive(false);
             }
@@ -80,11 +85,12 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
 
     private void onVuMarkLost(VuMarkTarget target)
     {
-        stateCanvas = false;
-        showGUI(stateCanvas);
+        comfirmObjectCanvas.SetActive(false);
+        //stateCanvas = false;
+        //showGUI(stateCanvas);
         // Deactivate model by model number
 
-        modelList[modelN].SetActive(false);
+        //modelList[modelN].SetActive(false);
     }
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
@@ -130,6 +136,11 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
                   
                     comfirmObjectCanvas.SetActive(false);
                      found = true;
+                    if (sidepanelobject.win())
+                    {
+                        winfinishDialog.SetActive(true);
+                        sidepanelCanvas.SetActive(false);
+                    }
                 }   
             }
            if(found == false)
