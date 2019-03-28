@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -274,12 +274,84 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1038290857}
+      objectReference: {fileID: 1124515737}
     - target: {fileID: 23821592019656480, guid: 506f76d5d5e4241988eb5104279848a0,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1783716382}
+      objectReference: {fileID: 820381257}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mTrackableName
+      value: Game2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mDataSetPath
+      value: Vuforia/VuMarkDB.xml
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mAspectRatio
+      value: 1.1250029
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mPreviewImage
+      value: Assets/Editor/Vuforia/VuMarkDB/13d6ac2907754161a38808d2366cd71f_preview.png
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mIdType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mIdLength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mBoundingBox.width
+      value: 133.333
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mBoundingBox.height
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mOrigin.x
+      value: 66.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mOrigin.y
+      value: 36.276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150881523856580, guid: 506f76d5d5e4241988eb5104279848a0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.1250029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150881523856580, guid: 506f76d5d5e4241988eb5104279848a0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.1250029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150881523856580, guid: 506f76d5d5e4241988eb5104279848a0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.1250029
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308453256022766, guid: 506f76d5d5e4241988eb5104279848a0,
+        type: 2}
+      propertyPath: mHeight
+      value: 1.1250029
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506f76d5d5e4241988eb5104279848a0, type: 2}
   m_IsPrefabAsset: 0
@@ -335,6 +407,33 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfb21a0b4d2b4bafaf28cc1ee7e8616, type: 2}
   m_IsPrefabAsset: 0
+--- !u!21 &820381257
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 'Game2Material
+
+    -10894'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 47c2e86b3a94ceae3e14991d6190e2e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &859552825
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,12 +501,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1253572892050918, guid: 8bfb21a0b4d2b4bafaf28cc1ee7e8616,
     type: 2}
   m_PrefabInternal: {fileID: 397076620}
---- !u!43 &1038290857
+--- !u!1 &1058133831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1811998902384464, guid: 50a5a1bfe243143e98b5a2d40423de9a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1975201595}
+--- !u!43 &1124515737
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Vumark15174
+  m_Name: Vumark-10894
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -557,38 +661,6 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
---- !u!1 &1058133831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1811998902384464, guid: 50a5a1bfe243143e98b5a2d40423de9a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1975201595}
---- !u!21 &1783716382
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 'MortonTuxedosMaterial
-
-    15174'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ad0ad173b6e9aa5d3a4ba8eb5b6945ce, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1001 &1975201595
 Prefab:
   m_ObjectHideFlags: 0
@@ -646,7 +718,12 @@ Prefab:
     - target: {fileID: 224977699591474952, guid: 50a5a1bfe243143e98b5a2d40423de9a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000026085434
+      value: 0.000035015688
+      objectReference: {fileID: 0}
+    - target: {fileID: 224801028950416998, guid: 50a5a1bfe243143e98b5a2d40423de9a,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a5a1bfe243143e98b5a2d40423de9a, type: 2}
