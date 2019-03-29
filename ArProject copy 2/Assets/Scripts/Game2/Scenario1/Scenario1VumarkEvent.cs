@@ -63,7 +63,7 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     private void onVuMarkDetected(VuMarkTarget target)
     {
         targetFound = getVuMarkID(target);
-        Debug.Log(targetFound);
+        Debug.Log(targetFound+"       TEst");
         for (int i = 0; i < modelIdList.Count; i++)
         {
             if (modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound)==false )
