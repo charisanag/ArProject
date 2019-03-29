@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c00e517d862cf44988a06ac76e5db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemlList: []
+  itemList: []
   contentPanel: {fileID: 0}
-  otherObjectList: {fileID: 0}
+  done: {fileID: 0}
   toggleObjectPool: {fileID: 0}
 --- !u!114 &114195199308363398
 MonoBehaviour:
@@ -508,9 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3415404fc0f8e4790f67993e9a72a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: {fileID: 114488890722341812}
   nameLabel: {fileID: 114246437531665352}
   iconImage: {fileID: 114207318348626026}
+  itemId: 
 --- !u!114 &114422754979734386
 MonoBehaviour:
   m_ObjectHideFlags: 1
