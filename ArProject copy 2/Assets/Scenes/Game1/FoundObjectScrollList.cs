@@ -14,7 +14,6 @@ public class FoundObjectScrollList : MonoBehaviour {
 
     void Create()
     {
-
         for (int i = 0; i < ObjectScrollList.cheeckedList.Count; i++)
         {
             Item item = ObjectScrollList.cheeckedList[i];
@@ -23,8 +22,9 @@ public class FoundObjectScrollList : MonoBehaviour {
             SideFoundItem catalog = a.GetComponent<SideFoundItem>();
             catalog.Setup(item, this);
             selected.Add(catalog);
-
+            
         }
+       
 
     }
 
@@ -34,6 +34,7 @@ public class FoundObjectScrollList : MonoBehaviour {
 
         Create();
     }
+
 
     public void updateItem(string itemToUpdate)
     {
@@ -61,5 +62,25 @@ public class FoundObjectScrollList : MonoBehaviour {
             }
         }
         return win;
+    }
+
+    public bool GetItemState(string itemID)
+    {
+        bool state = false;
+        foreach(Item it in ObjectScrollList.cheeckedList)
+        {
+            if (it.itemId.Equals(itemID))
+            {
+                if (it.state.Equals(false))
+                {
+                    state = false;
+                }
+                else
+                {
+                    state = true;
+                }
+            }
+        }
+        return state;
     }
 }

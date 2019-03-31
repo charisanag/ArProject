@@ -5,7 +5,7 @@ using Vuforia;
 using UnityEngine.SceneManagement;
 using System;
 
-public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
+public class VuMarkEvent : MonoBehaviour
 {
 
 	public List<GameObject> modelList;
@@ -31,11 +31,13 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
     private bool stateCanvas = false;
     public event Action ScoChange;
+    private FoundObjectScrollList p;
 
     public void Awake()
     {  
         //Set onclicklistener for buttons in item prefab
         ButtonManager.onClickItem += ButtonManager_onClickItem;
+        
     }
 
    
@@ -52,12 +54,14 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     }
 
     void Start () {
-
+        p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
         // Set VuMarkManager
         vuMarkManager =TrackerManager.Instance.GetStateManager().GetVuMarkManager();
         // Set VuMark detected and lost behavior methods
+
         vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
         vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
+       // vuMarkManager.RegisterVuMarkBehaviourDetectedCallback();
        
   
         // Deactivate all models 
@@ -68,10 +72,10 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
   
 
     void Update () {
-        /*		foreach (var vmb in vuMarkManager.GetActiveBehaviours()) {
+        	foreach (var vmb in vuMarkManager.GetActiveBehaviours()) {
                     Debug.Log ("ID: "+ getVuMarkID(vmb.VuMarkTarget));
                 }
-        */
+        
         
 
 
@@ -92,14 +96,21 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
     public void onVuMarkDetected(VuMarkTarget target){
         targetFound = getVuMarkID(target);
+        Debug.Log(targetFound + "  <--------------------------");
         // Enable canvas objects
         for (int i = 0; i < modelIdList.Count; i++)
         {
-            if (modelIdList[i].Equals(targetFound))
+            if (modelIdList[i].Equals(targetFound)  )
             {
-            
-                stateCanvas = true;
-                showGUI(stateCanvas);
+              if(p.GetItemState(targetFound) == false)
+                {
+                    canvas.SetActive(true);
+                }
+                else
+                {
+                    modelList[i].SetActive(true);
+                }
+                
             }
         }
           
@@ -107,15 +118,21 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
        // SetActive(getVuMarkID(target));
 
     }
-
-    private void onVuMarkLost(VuMarkTarget target){
     
+    private void onVuMarkLost(VuMarkTarget target){
+        
+        String tartgLost = getVuMarkID(target);
+        Debug.Log(tartgLost + "  <++++++++++++++++++++++++++");
         //Debug.Log ("Lost ID: "+ getVuMarkID(target));
-        stateCanvas = false;
-        showGUI(stateCanvas);
+        canvas.SetActive(false);
         // Deactivate model by model number
-  
-        modelList [modelN].SetActive (false);
+        for (int i = 0; i < modelIdList.Count; i++)
+        {
+            if (modelIdList[i].Equals(tartgLost)) {
+                modelList[i].SetActive(false);
+            }
+        }
+        
 	}
   
 
@@ -142,7 +159,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
 
                         if (ObjectScrollList.cheeckedList[j].itemId.Equals(selectedItem)){
                             ObjectScrollList.cheeckedList[j].setState(true);
-                            FoundObjectScrollList p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
+                            
                             p.updateItem(selectedItem);
                             if(p.gameover()==true){
                                 finishedGameDialog.SetActive(true);
@@ -161,21 +178,7 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
         }
     }
    
-    public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
-    {
-       /* 
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED)
-        {
-            stateCanvas = true;
-            showGUI(stateCanvas);
-        }
-        else
-        {
-            stateCanvas = false;
-            showGUI(stateCanvas);
-        }*/
-    }
+ 
 
 
     public void showGUI(bool showgui){
@@ -187,7 +190,6 @@ public class VuMarkEvent : MonoBehaviour,ITrackableEventHandler
     }
 
 
-    public void UpdateSideItem(){
-        sideItemDelegate();
-    }
+    
 }
+

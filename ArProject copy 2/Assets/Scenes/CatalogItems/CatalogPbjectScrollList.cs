@@ -12,9 +12,9 @@ public class CatalogPbjectScrollList : MonoBehaviour {
 
     void CreateA()
     {
-     
         for (int i = 0; i < ObjectScrollList.cheeckedList.Count; i++)
         {
+
             Item item = ObjectScrollList.cheeckedList[i];
             GameObject a = (GameObject)Instantiate(b);
             a.transform.SetParent(contentPanel.transform, false);
@@ -23,14 +23,18 @@ public class CatalogPbjectScrollList : MonoBehaviour {
             
         }
     }
-
+    void Update()
+    {
+       
+    }
     
     void Start()
     {
-      
         CreateA();
-    }
 
+    }
+   
+    
     
 
 
