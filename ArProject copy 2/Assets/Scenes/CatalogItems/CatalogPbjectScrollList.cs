@@ -30,6 +30,7 @@ public class CatalogPbjectScrollList : MonoBehaviour {
     
     void Start()
     {
+        Debug.Log("NAIIIIIIIIIIIIIIIII");
         CreateA();
 
     }

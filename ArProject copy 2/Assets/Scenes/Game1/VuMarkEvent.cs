@@ -96,39 +96,37 @@ public class VuMarkEvent : MonoBehaviour
 	}
 
     public void onVuMarkDetected(VuMarkTarget target){
-        //canvas.gameObject.SetActive(true);
-        /*  targetFound = getVuMarkID(target);
-          Debug.Log(targetFound + "  <--------------------------");
-          canvas.SetActive(true);
-          // Enable canvas objects
-           for (int i = 0; i < modelIdList.Count; i++)
-           {
-               if (modelIdList[i].Equals(targetFound)  )
-               {
-                 if(p.GetItemState(targetFound) == false)
-                   {
-                       canvas.SetActive(true);
-                   }
-                   else
-                   {
-                       modelList[i].SetActive(true);
-                   }
 
-               }
-           }*/
+        targetFound = getVuMarkID(target);
+          
+         // Enable canvas objects
+          for (int i = 0; i < modelIdList.Count; i++)
+          {
+              if (modelIdList[i].Equals(targetFound)  )
+              {
+                if(p.GetItemState(targetFound) == false)
+                  {
+                    canvas.gameObject.SetActive(true);
+                }
+                  else
+                  {
+                      modelList[i].SetActive(true);
+                  }
+
+              }
+          }
 
 
         // SetActive(getVuMarkID(target));
 
     }
-    
+
     private void onVuMarkLost(VuMarkTarget target){
-      //  canvas.gameObject.SetActive(false);
-        /* canvas.SetActive(false);
-        String tartgLost = getVuMarkID(target);
-       Debug.Log(tartgLost + "  <++++++++++++++++++++++++++");
-        //Debug.Log ("Lost ID: "+ getVuMarkID(target));
-        canvas.SetActive(false);
+
+
+        canvas.gameObject.SetActive(false);
+       
+        String tartgLost = getVuMarkID(target);  
         // Deactivate model by model number
         for (int i = 0; i < modelIdList.Count; i++)
         {
@@ -136,7 +134,7 @@ public class VuMarkEvent : MonoBehaviour
                 modelList[i].SetActive(false);
             }
         }
-        */
+
     }
   
 
