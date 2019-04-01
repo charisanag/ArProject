@@ -5,6 +5,7 @@ using Vuforia;
 using UnityEngine.SceneManagement;
 using System;
 
+
 public class VuMarkEvent : MonoBehaviour
 {
 
@@ -25,7 +26,7 @@ public class VuMarkEvent : MonoBehaviour
     public static OnUpdatingSideItem sideItemDelegate;
 
 
-    public GameObject canvas;
+    public Canvas canvas;
     public GameObject finishedGameDialog;
     public GameObject sidePanelUI;
 
@@ -95,34 +96,37 @@ public class VuMarkEvent : MonoBehaviour
 	}
 
     public void onVuMarkDetected(VuMarkTarget target){
-        targetFound = getVuMarkID(target);
-        Debug.Log(targetFound + "  <--------------------------");
-        // Enable canvas objects
-        for (int i = 0; i < modelIdList.Count; i++)
-        {
-            if (modelIdList[i].Equals(targetFound)  )
-            {
-              if(p.GetItemState(targetFound) == false)
-                {
-                    canvas.SetActive(true);
-                }
-                else
-                {
-                    modelList[i].SetActive(true);
-                }
-                
-            }
-        }
-          
-        
-       // SetActive(getVuMarkID(target));
+        //canvas.gameObject.SetActive(true);
+        /*  targetFound = getVuMarkID(target);
+          Debug.Log(targetFound + "  <--------------------------");
+          canvas.SetActive(true);
+          // Enable canvas objects
+           for (int i = 0; i < modelIdList.Count; i++)
+           {
+               if (modelIdList[i].Equals(targetFound)  )
+               {
+                 if(p.GetItemState(targetFound) == false)
+                   {
+                       canvas.SetActive(true);
+                   }
+                   else
+                   {
+                       modelList[i].SetActive(true);
+                   }
+
+               }
+           }*/
+
+
+        // SetActive(getVuMarkID(target));
 
     }
     
     private void onVuMarkLost(VuMarkTarget target){
-        
+      //  canvas.gameObject.SetActive(false);
+        /* canvas.SetActive(false);
         String tartgLost = getVuMarkID(target);
-        Debug.Log(tartgLost + "  <++++++++++++++++++++++++++");
+       Debug.Log(tartgLost + "  <++++++++++++++++++++++++++");
         //Debug.Log ("Lost ID: "+ getVuMarkID(target));
         canvas.SetActive(false);
         // Deactivate model by model number
@@ -132,8 +136,8 @@ public class VuMarkEvent : MonoBehaviour
                 modelList[i].SetActive(false);
             }
         }
-        
-	}
+        */
+    }
   
 
     public void SetActiveObject(string selectedItem)
@@ -148,7 +152,7 @@ public class VuMarkEvent : MonoBehaviour
 
                 if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) && modelList[i].active==false)
                 {
-                    canvas.SetActive(false);
+                    canvas.gameObject.SetActive(false);
                     modelList[i].SetActive(true);
 
                     // Set model number
@@ -183,9 +187,10 @@ public class VuMarkEvent : MonoBehaviour
 
     public void showGUI(bool showgui){
         if(showgui==false){
-            canvas.SetActive(false);
-        }else{
-            canvas.SetActive(true);
+            canvas.gameObject.SetActive(false);
+        }
+        else{
+            canvas.gameObject.SetActive(true);
         }
     }
 

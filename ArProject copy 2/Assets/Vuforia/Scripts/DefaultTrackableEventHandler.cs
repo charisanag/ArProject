@@ -18,9 +18,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
+    public Canvas canvas;
     #region PROTECTED_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
+    
 
     #endregion // PROTECTED_MEMBER_VARIABLES
 
@@ -96,6 +98,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+        canvas.gameObject.SetActive(true);
     }
 
 
@@ -116,6 +120,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+
+        canvas.gameObject.SetActive(false);
     }
 
     #endregion // PROTECTED_METHODS
