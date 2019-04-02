@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
 public class SideFoundItem : MonoBehaviour {
 
     public Text itemName;
@@ -30,7 +31,9 @@ public class SideFoundItem : MonoBehaviour {
 
     public void updateItem()
     {
+   
         item.setState(true);
+        foundstate.color = Color.green;
         foundstate.text = "Βρέθηκε";
 
     }

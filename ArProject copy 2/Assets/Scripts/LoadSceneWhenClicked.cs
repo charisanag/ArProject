@@ -8,10 +8,15 @@ public class LoadSceneWhenClicked : MonoBehaviour {
     public void LoadByIndex (int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+        
     }
 
     public void LoadSceneFromStart(int sceneIdx)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void loadlevel()
+    {
+        Application.LoadLevel("MainMenu");
     }
 }

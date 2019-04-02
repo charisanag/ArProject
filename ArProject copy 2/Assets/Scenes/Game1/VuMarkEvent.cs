@@ -26,9 +26,10 @@ public class VuMarkEvent : MonoBehaviour
     public static OnUpdatingSideItem sideItemDelegate;
 
 
-    public Canvas canvas;
+    public GameObject canvas;
     public GameObject finishedGameDialog;
     public GameObject sidePanelUI;
+    
 
     private bool stateCanvas = false;
     public event Action ScoChange;
@@ -38,7 +39,7 @@ public class VuMarkEvent : MonoBehaviour
     {  
         //Set onclicklistener for buttons in item prefab
         ButtonManager.onClickItem += ButtonManager_onClickItem;
-        
+       
     }
 
    
@@ -55,16 +56,19 @@ public class VuMarkEvent : MonoBehaviour
     }
 
     void Start () {
+        
+        
         p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
         // Set VuMarkManager
-        vuMarkManager =TrackerManager.Instance.GetStateManager().GetVuMarkManager();
-        // Set VuMark detected and lost behavior methods
+      
+            vuMarkManager = TrackerManager.Instance.GetStateManager().GetVuMarkManager();
+            // Set VuMark detected and lost behavior methods
 
-        vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
-        vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
-       // vuMarkManager.RegisterVuMarkBehaviourDetectedCallback();
+            vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
+            vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
        
-  
+        // vuMarkManager.RegisterVuMarkBehaviourDetectedCallback();
+       
         // Deactivate all models 
         foreach (GameObject item in modelList){
 			item.SetActive (false);
@@ -106,7 +110,7 @@ public class VuMarkEvent : MonoBehaviour
               {
                 if(p.GetItemState(targetFound) == false)
                   {
-                    canvas.gameObject.SetActive(true);
+                    canvas.SetActive(true);
                 }
                   else
                   {
@@ -124,7 +128,7 @@ public class VuMarkEvent : MonoBehaviour
     private void onVuMarkLost(VuMarkTarget target){
 
 
-        canvas.gameObject.SetActive(false);
+        canvas.SetActive(false);
        
         String tartgLost = getVuMarkID(target);  
         // Deactivate model by model number
@@ -150,7 +154,7 @@ public class VuMarkEvent : MonoBehaviour
 
                 if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) && modelList[i].active==false)
                 {
-                    canvas.gameObject.SetActive(false);
+                    canvas.SetActive(false);
                     modelList[i].SetActive(true);
 
                     // Set model number
@@ -167,9 +171,15 @@ public class VuMarkEvent : MonoBehaviour
                                 finishedGameDialog.SetActive(true);
                                 sidePanelUI.SetActive(false);
                                 ObjectScrollList.cheeckedList = new List<Item>();
+                                vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
+                                vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
                                 TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                             }
-                            
+
+                        }
+                        else
+                        {
+
                         }
                     }
                         
@@ -185,10 +195,10 @@ public class VuMarkEvent : MonoBehaviour
 
     public void showGUI(bool showgui){
         if(showgui==false){
-            canvas.gameObject.SetActive(false);
+            canvas.SetActive(false);
         }
         else{
-            canvas.gameObject.SetActive(true);
+            canvas.SetActive(true);
         }
     }
 
