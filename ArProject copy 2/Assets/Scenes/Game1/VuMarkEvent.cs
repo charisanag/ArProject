@@ -108,7 +108,7 @@ public class VuMarkEvent : MonoBehaviour
     public void onVuMarkDetected(VuMarkTarget target){
 
         targetFound = getVuMarkID(target);
-          
+          Debug.Log(targetFound+" VRETHIKEEEEEEE");
          // Enable canvas objects
           for (int i = 0; i < modelIdList.Count; i++)
           {
@@ -120,7 +120,8 @@ public class VuMarkEvent : MonoBehaviour
                 }
                   else
                   {
-                      modelList[i].SetActive(true);
+                    canvas.SetActive(false);
+                    modelList[i].SetActive(true);
                   }
 
               }
@@ -133,10 +134,11 @@ public class VuMarkEvent : MonoBehaviour
 
     private void onVuMarkLost(VuMarkTarget target){
 
-
         canvas.SetActive(false);
        
-        String tartgLost = getVuMarkID(target);  
+        String tartgLost = getVuMarkID(target);
+        Debug.Log(tartgLost + "   XATHIKEEEEEEEE");
+
         // Deactivate model by model number
         for (int i = 0; i < modelIdList.Count; i++)
         {
@@ -173,7 +175,7 @@ public class VuMarkEvent : MonoBehaviour
                             ObjectScrollList.cheeckedList[j].setState(true);
                             
                             p.updateItem(selectedItem);
-                            catalogPbjectScroll.UpdateList();
+                           // catalogPbjectScroll.UpdateList();
                             if (p.gameover()==true){
                                 finishedGameDialog.SetActive(true);
                                 sidePanelUI.SetActive(false);
@@ -186,7 +188,7 @@ public class VuMarkEvent : MonoBehaviour
                         }
                         else
                         {
-                            if(countTries < 3)
+                          /*  if(countTries < 3)
                             {
                                 countTries++;
                                 triesText.text = "Προσπάθειες : " + countTries + "/3";
@@ -196,7 +198,7 @@ public class VuMarkEvent : MonoBehaviour
                                 gameOverDialog.SetActive(true);
                                 vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
                                 vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
-                            }
+                            }*/
                         }
                     }
                         
