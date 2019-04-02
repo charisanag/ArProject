@@ -8,7 +8,7 @@ public class CatalogPbjectScrollList : MonoBehaviour {
 
     public Transform contentPanel;
     public GameObject b;
-   
+    private List<CatalogItem> catalogList = new List<CatalogItem>();
 
     void CreateA()
     {
@@ -20,12 +20,18 @@ public class CatalogPbjectScrollList : MonoBehaviour {
             a.transform.SetParent(contentPanel.transform, false);
             CatalogItem catalog = a.GetComponent<CatalogItem>();
             catalog.Setup(item, this);
-            
+            catalogList.Add(catalog);
         }
     }
-    void Update()
+    public void UpdateList()
     {
-       
+       foreach(CatalogItem it in catalogList)
+        {
+            if(it.GetItem().state == false)
+            {
+                catalogList.Remove(it);
+            }
+        }
     }
     
     void Start()
@@ -35,6 +41,8 @@ public class CatalogPbjectScrollList : MonoBehaviour {
         
 
     }
+
+ 
 
 
 

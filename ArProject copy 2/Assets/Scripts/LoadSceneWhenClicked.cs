@@ -19,4 +19,8 @@ public class LoadSceneWhenClicked : MonoBehaviour {
     {
         Application.LoadLevel("MainMenu");
     }
+    public void closeCanvasOnClick(GameObject canvas)
+    {
+        canvas.SetActive(false);
+    }
 }

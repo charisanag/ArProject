@@ -4,7 +4,7 @@ using UnityEngine;
 using Vuforia;
 using UnityEngine.SceneManagement;
 using System;
-
+using UnityEngine.UI;
 
 public class VuMarkEvent : MonoBehaviour
 {
@@ -29,11 +29,16 @@ public class VuMarkEvent : MonoBehaviour
     public GameObject canvas;
     public GameObject finishedGameDialog;
     public GameObject sidePanelUI;
+    public GameObject gameOverDialog;
+    public Text triesText;
+
+    int countTries = 0;
     
 
     private bool stateCanvas = false;
     public event Action ScoChange;
     private FoundObjectScrollList p;
+    private CatalogPbjectScrollList catalogPbjectScroll;
 
     public void Awake()
     {  
@@ -56,9 +61,10 @@ public class VuMarkEvent : MonoBehaviour
     }
 
     void Start () {
-        
-        
+
+        triesText.text = "Προσπάθειες : "+countTries+"/3";
         p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
+        catalogPbjectScroll = (CatalogPbjectScrollList)FindObjectOfType(typeof(CatalogPbjectScrollList));
         // Set VuMarkManager
       
             vuMarkManager = TrackerManager.Instance.GetStateManager().GetVuMarkManager();
@@ -167,7 +173,8 @@ public class VuMarkEvent : MonoBehaviour
                             ObjectScrollList.cheeckedList[j].setState(true);
                             
                             p.updateItem(selectedItem);
-                            if(p.gameover()==true){
+                            catalogPbjectScroll.UpdateList();
+                            if (p.gameover()==true){
                                 finishedGameDialog.SetActive(true);
                                 sidePanelUI.SetActive(false);
                                 ObjectScrollList.cheeckedList = new List<Item>();
@@ -179,7 +186,17 @@ public class VuMarkEvent : MonoBehaviour
                         }
                         else
                         {
-
+                            if(countTries < 3)
+                            {
+                                countTries++;
+                                triesText.text = "Προσπάθειες : " + countTries + "/3";
+                            }
+                            else
+                            {
+                                gameOverDialog.SetActive(true);
+                                vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
+                                vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
+                            }
                         }
                     }
                         

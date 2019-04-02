@@ -23,5 +23,10 @@ public class CatalogItem : MonoBehaviour
         scrollList = currentScrollList;
     }
 
+    public Item GetItem()
+    {
+        return item;
+    }
+
 
 }

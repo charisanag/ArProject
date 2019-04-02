@@ -1801,7 +1801,7 @@ GameObject:
   - component: {fileID: 1677654660}
   - component: {fileID: 1677654659}
   m_Layer: 0
-  m_Name: BackButton
+  m_Name: BackBnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

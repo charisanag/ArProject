@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,7 +634,7 @@ Prefab:
     - target: {fileID: 224531067182922318, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.87900007
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 224531067182922318, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
@@ -690,12 +690,12 @@ Prefab:
     - target: {fileID: 114509908472486814, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114509908472486814, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
       propertyPath: m_FontData.m_MinSize
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114509908472486814, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
@@ -706,7 +706,7 @@ Prefab:
     - target: {fileID: 114980563185444174, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114980563185444174, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
         type: 2}
@@ -895,6 +895,26 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114509908472486814, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509908472486814, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980563185444174, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980563185444174, guid: 9a4348c3bf2b82d42910f0e17be2cf8b,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4348c3bf2b82d42910f0e17be2cf8b, type: 2}
   m_IsPrefabAsset: 0
@@ -937,10 +957,10 @@ RectTransform:
   m_Father: {fileID: 157793508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0.85}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 60}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1579049791
 MonoBehaviour:
@@ -1010,6 +1030,7 @@ GameObject:
   - component: {fileID: 2019616711}
   - component: {fileID: 2019616710}
   - component: {fileID: 2019616709}
+  - component: {fileID: 2019616712}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -1076,9 +1097,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2019616707}
-        m_MethodName: SendMessageUpwards
-        m_Mode: 5
+      - m_Target: {fileID: 2019616712}
+        m_MethodName: LoadByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1125,3 +1146,14 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2019616707}
   m_CullTransparentMesh: 0
+--- !u!114 &2019616712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019616707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbebff475c3e9d48be9b0c3ac5c30c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
