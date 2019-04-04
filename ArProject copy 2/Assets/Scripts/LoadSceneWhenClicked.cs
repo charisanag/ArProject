@@ -7,6 +7,7 @@ public class LoadSceneWhenClicked : MonoBehaviour {
 
     public void LoadByIndex (int sceneIndex)
     {
+        
         SceneManager.LoadScene(sceneIndex);
         
     }
@@ -15,9 +16,9 @@ public class LoadSceneWhenClicked : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void loadlevel()
+    public void loadlevel(string sceneName)
     {
-        Application.LoadLevel("MainMenu");
+        Application.LoadLevel(sceneName);
         
     }
     public void closeCanvasOnClick(GameObject canvas)

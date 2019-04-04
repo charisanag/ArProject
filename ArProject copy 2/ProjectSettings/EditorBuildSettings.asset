@@ -41,4 +41,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game2/Scenario1/ScenarioSelection.unity
     guid: 3ce160294de3b574b91470cfd400f833
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario2/Senario2Preperation.unity
+    guid: c0f4cbc414d65874b8b32a99e6049998
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario2/Scenario2Play.unity
+    guid: 7013b735f42378f4c987e636bd1e5d24
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario3/Senario3Preperation.unity
+    guid: 7fc5cf0e6b6f00845a83fd08b02c922a
+  - enabled: 1
+    path: Assets/Scenes/Game2/Scenario3/Scenario3GamePlay.unity
+    guid: d7e7131ed32e717458137a57a0bbb16c
   m_configObjects: {}
