@@ -54,6 +54,7 @@ public class ObjectScrollList : MonoBehaviour {
             Item item = itemList[i];
             GameObject newToggle = toggleObjectPool.GetObject();
             newToggle.transform.SetParent(contentPanel);
+            newToggle.transform.localScale += new Vector3(0.4f,0.4f,0.4f); //changing scale in toggle because is 0.5 and setting to 0.9
             ToggleScript toggleScript = newToggle.GetComponent<ToggleScript>();
             toggleScript.Setup(item, this);
 
