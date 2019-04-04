@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
+using UnityEngine.UI;
 
-public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
+public class Scenario1VumarkEvent : MonoBehaviour
 {
     public List<GameObject> modelList;
     public List<string> modelIdList;
@@ -16,6 +17,11 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     public GameObject comfirmObjectCanvas;
     public GameObject winfinishDialog;
     public GameObject sidepanelCanvas;
+    public GameObject gameOverDialog;
+    public GameObject wrongChoiceDialog;
+    public Text triesText;
+    int countTries = 3;
+    
     private bool stateCanvas = false;
     private int modelN;
 
@@ -63,13 +69,12 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
     private void onVuMarkDetected(VuMarkTarget target)
     {
         targetFound = getVuMarkID(target);
-        Debug.Log(targetFound+"       TEst");
+        Debug.Log(targetFound + "  TARGET FOUND");
         for (int i = 0; i < modelIdList.Count; i++)
         {
             if (modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound)==false )
             {
-                modelList[0].SetActive(false);
-                modelList[1].SetActive(true);
+                
                 comfirmObjectCanvas.SetActive(true);
                 //  stateCanvas = true;
                 //  showGUI(stateCanvas);
@@ -77,25 +82,28 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
             else if(modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound) == true)
             {
                 comfirmObjectCanvas.SetActive(false);
-                modelList[0].SetActive(true);
-                modelList[1].SetActive(false);
+                modelList[i].SetActive(true);
+           
             }
         }
     }
 
     private void onVuMarkLost(VuMarkTarget target)
     {
+        string targetlost = getVuMarkID(target);
         comfirmObjectCanvas.SetActive(false);
-        //stateCanvas = false;
-        //showGUI(stateCanvas);
-        // Deactivate model by model number
+        for (int i = 0; i < modelIdList.Count; i++)
+        {
+            if (modelIdList[i].Equals(targetlost))
+            {
+                modelList[i].SetActive(false);
+            }
+        }
+        
 
-        //modelList[modelN].SetActive(false);
+
     }
-    public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
-    {
-        //throw new System.NotImplementedException();
-    }
+
 
     private string getVuMarkID(VuMarkTarget vuMark)
     {
@@ -127,10 +135,8 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
                 string s2 = modelIdList[i];
                 if (s2.Equals(itemTofind.getObjectID()) && itemTofind.getObjectID().Equals(targetFound) )
                 {
-                    //set model number
-                    modelN = 0;
-                    modelList[1].SetActive(false);
-                    modelList[0].SetActive(true);
+
+                    modelList[i].SetActive(true);
                    
                     sidepanelobject.updateItem(itemTofind);
                   
@@ -145,9 +151,22 @@ public class Scenario1VumarkEvent : MonoBehaviour, ITrackableEventHandler
             }
            if(found == false)
             {
-                modelN = 1;
-                modelList[1].SetActive(true);
-                comfirmObjectCanvas.SetActive(false);
+                
+                
+                if (countTries > 0)
+                {
+                    wrongChoiceDialog.SetActive(true);
+                    countTries--;
+                    triesText.text = "Προσπάθειες : " + countTries;
+                }
+                else
+                {
+                    triesText.text = "Προσπάθειες : " + 0;
+                    sidepanelCanvas.SetActive(false);
+                    gameOverDialog.SetActive(true);
+                    vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
+                    vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
+                }
             }
         }
     }

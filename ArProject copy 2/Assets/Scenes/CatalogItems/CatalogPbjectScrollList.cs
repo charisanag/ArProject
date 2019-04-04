@@ -8,7 +8,7 @@ public class CatalogPbjectScrollList : MonoBehaviour {
 
     public Transform contentPanel;
     public GameObject b;
-   // private List<CatalogItem> catalogList = new List<CatalogItem>();
+    private List<CatalogItem> catalogList = new List<CatalogItem>();
 
     void CreateA()
     {
@@ -20,20 +20,28 @@ public class CatalogPbjectScrollList : MonoBehaviour {
             a.transform.SetParent(contentPanel.transform, false);
             CatalogItem catalog = a.GetComponent<CatalogItem>();
             catalog.Setup(item, this);
-            //catalogList.Add(catalog);
+            catalogList.Add(catalog);
+           
         }
     }
+    
     public void UpdateList()
     {
-      /* foreach(CatalogItem it in catalogList)
-        {
-            if(it.GetItem().state == false)
-            {
-                catalogList.Remove(it);
+       
+            for (int i = 0; i < catalogList.Count; i++)
+             {
+                if (catalogList[i].GetItem().state == true)
+                {
+                   Destroy(catalogList[i].gameObject);
+                   catalogList.Remove(catalogList[i]);
+
+                }
             }
-        }*/
     }
-    
+    void Update()
+    {
+     
+    }
     void Start()
     {
   

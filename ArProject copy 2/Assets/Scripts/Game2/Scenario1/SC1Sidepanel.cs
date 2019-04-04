@@ -13,6 +13,7 @@ public class Sc1Item
     private Sprite icon;
     public string objectID;
     private GameObject obj = null;
+    public string hint;
 
     public void setObjectID(string objectID)
     {
@@ -40,7 +41,10 @@ public class Sc1Item
     {
         this.obj = obj;
     }
-    
+    public string getHint()
+    {
+        return hint;
+    }
     
 }
 public class SC1Sidepanel : MonoBehaviour {

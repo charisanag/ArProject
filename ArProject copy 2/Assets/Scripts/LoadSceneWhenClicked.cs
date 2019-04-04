@@ -18,9 +18,21 @@ public class LoadSceneWhenClicked : MonoBehaviour {
     public void loadlevel()
     {
         Application.LoadLevel("MainMenu");
+        
     }
     public void closeCanvasOnClick(GameObject canvas)
     {
         canvas.SetActive(false);
+       
     }
+    public void hintCanvas(GameObject hintDialog)
+    {
+        
+        if (hintDialog.active == false)
+        {
+            hintDialog.SetActive(true);
+        }
+    }
+
+
 }

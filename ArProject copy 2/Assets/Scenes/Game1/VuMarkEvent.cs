@@ -31,8 +31,9 @@ public class VuMarkEvent : MonoBehaviour
     public GameObject sidePanelUI;
     public GameObject gameOverDialog;
     public Text triesText;
+    public GameObject wrongChoiceDialog;
 
-    int countTries = 0;
+    int countTries = 3;
     
 
     private bool stateCanvas = false;
@@ -41,10 +42,11 @@ public class VuMarkEvent : MonoBehaviour
     private CatalogPbjectScrollList catalogPbjectScroll;
 
     public void Awake()
-    {  
+    {
         //Set onclicklistener for buttons in item prefab
+        ButtonManager.onClickItem -= ButtonManager_onClickItem;
         ButtonManager.onClickItem += ButtonManager_onClickItem;
-       
+        DontDestroyOnLoad(canvas);
     }
 
    
@@ -62,7 +64,7 @@ public class VuMarkEvent : MonoBehaviour
 
     void Start () {
 
-        triesText.text = "Προσπάθειες : "+countTries+"/3";
+        triesText.text = "Προσπάθειες : "+countTries;
         p = (FoundObjectScrollList)FindObjectOfType(typeof(FoundObjectScrollList));
         catalogPbjectScroll = (CatalogPbjectScrollList)FindObjectOfType(typeof(CatalogPbjectScrollList));
         // Set VuMarkManager
@@ -108,7 +110,6 @@ public class VuMarkEvent : MonoBehaviour
     public void onVuMarkDetected(VuMarkTarget target){
 
         targetFound = getVuMarkID(target);
-          Debug.Log(targetFound+" VRETHIKEEEEEEE");
          // Enable canvas objects
           for (int i = 0; i < modelIdList.Count; i++)
           {
@@ -152,6 +153,7 @@ public class VuMarkEvent : MonoBehaviour
 
     public void SetActiveObject(string selectedItem)
     {
+        bool found = false;
         if (targetFound != null)
         {
 
@@ -160,7 +162,7 @@ public class VuMarkEvent : MonoBehaviour
                 // string s1 = getVuMarkID(targ);
                 string s2 = modelIdList[i];
 
-                if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) && modelList[i].active==false)
+                if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) /*&& modelList[i].active==false*/)
                 {
                     canvas.SetActive(false);
                     modelList[i].SetActive(true);
@@ -173,39 +175,46 @@ public class VuMarkEvent : MonoBehaviour
 
                         if (ObjectScrollList.cheeckedList[j].itemId.Equals(selectedItem)){
                             ObjectScrollList.cheeckedList[j].setState(true);
-                            
+                            found = true;
                             p.updateItem(selectedItem);
-                           // catalogPbjectScroll.UpdateList();
+                            catalogPbjectScroll.UpdateList();
                             if (p.gameover()==true){
                                 finishedGameDialog.SetActive(true);
                                 sidePanelUI.SetActive(false);
                                 ObjectScrollList.cheeckedList = new List<Item>();
                                 vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
                                 vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
-                                TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
+                                //TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                             }
 
                         }
-                        else
-                        {
-                          /*  if(countTries < 3)
-                            {
-                                countTries++;
-                                triesText.text = "Προσπάθειες : " + countTries + "/3";
-                            }
-                            else
-                            {
-                                gameOverDialog.SetActive(true);
-                                vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
-                                vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
-                            }*/
-                        }
+                      
+                      
                     }
                         
 
 
                 }
             }
+        }
+        if(found == false)
+        {
+              if(countTries > 0)
+              {
+                canvas.SetActive(false);
+                wrongChoiceDialog.SetActive(true);
+                  countTries--;
+                  triesText.text = "Προσπάθειες : " + countTries ;
+              }
+              else
+              {
+                triesText.text = "Προσπάθειες : " + 0 ;
+                canvas.SetActive(false);
+                sidePanelUI.SetActive(false);
+                gameOverDialog.SetActive(true);
+                vuMarkManager.UnregisterVuMarkDetectedCallback(onVuMarkDetected);
+                vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
+              }
         }
     }
    

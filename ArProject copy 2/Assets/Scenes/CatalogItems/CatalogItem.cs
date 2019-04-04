@@ -25,8 +25,9 @@ public class CatalogItem : MonoBehaviour
 
     public Item GetItem()
     {
+       
         return item;
     }
-
+  
 
 }
