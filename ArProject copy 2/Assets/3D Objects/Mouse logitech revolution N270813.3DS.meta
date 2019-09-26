@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 91e2aa1ce8ce4144eb50e1aa4ed0477a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Logitech_0
+    100002: Logitech_1
+    100004: Logitech_2
+    100006: Logitech_3
+    100008: Logitech_4
+    100010: Logitech_5
+    100012: Logitech_6
+    100014: Logitech_7
+    100016: Logitech_8
+    100018: Logitech_9
+    100020: Logitech_r
+    100022: //RootNode
+    400000: Logitech_0
+    400002: Logitech_1
+    400004: Logitech_2
+    400006: Logitech_3
+    400008: Logitech_4
+    400010: Logitech_5
+    400012: Logitech_6
+    400014: Logitech_7
+    400016: Logitech_8
+    400018: Logitech_9
+    400020: Logitech_r
+    400022: //RootNode
+    2100000: ',Black Nero'
+    2100002: Ceramiks
+    2100004: marble 2
+    2100006: 'Material #545'
+    2100008: 'Material #546'
+    2100010: 09 - Default
+    2100012: Ceramiks 2
+    2300000: Logitech_0
+    2300002: Logitech_1
+    2300004: Logitech_2
+    2300006: Logitech_3
+    2300008: Logitech_4
+    2300010: Logitech_5
+    2300012: Logitech_6
+    2300014: Logitech_7
+    2300016: Logitech_8
+    2300018: Logitech_9
+    3300000: Logitech_0
+    3300002: Logitech_1
+    3300004: Logitech_2
+    3300006: Logitech_3
+    3300008: Logitech_4
+    3300010: Logitech_5
+    3300012: Logitech_6
+    3300014: Logitech_7
+    3300016: Logitech_8
+    3300018: Logitech_9
+    4300000: Logitech_0
+    4300002: Logitech_1
+    4300004: Logitech_2
+    4300006: Logitech_3
+    4300008: Logitech_4
+    4300010: Logitech_5
+    4300012: Logitech_6
+    4300014: Logitech_7
+    4300016: Logitech_8
+    4300018: Logitech_9
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
