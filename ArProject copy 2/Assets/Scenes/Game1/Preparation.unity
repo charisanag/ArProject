@@ -607,7 +607,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1774805530}
   m_HandleRect: {fileID: 1774805529}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 775859414}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1096,57 +1096,57 @@ MonoBehaviour:
     state: 0
     itemId: 0001
   - itemName: "\u0393\u03AC\u03BB\u03B1"
-    icon: {fileID: 21300000, guid: c4520b7c83e529042b0e81e5eb0a123b, type: 3}
+    icon: {fileID: 21300000, guid: 36c3b667e57fdaf4abdb1a9bb7c6352a, type: 3}
     state: 0
     itemId: 0002
   - itemName: "\u03A0\u03B1\u03B3\u03AC\u03BA\u03B9\u03B1"
-    icon: {fileID: 21300000, guid: b6b09d4daa6d0394b9d8281a751343f5, type: 3}
+    icon: {fileID: 21300000, guid: 5d10f8812ce63f84eb26fb4630603200, type: 3}
     state: 0
     itemId: 0003
   - itemName: "\u03A3\u03B1\u03BC\u03C0\u03BF\u03C5\u03AC\u03BD"
-    icon: {fileID: 21300000, guid: 3a84d88b66f57b449b7dd07f414e76fb, type: 3}
+    icon: {fileID: 21300000, guid: d9ea919b53f95964c8598f0092110ced, type: 3}
     state: 0
     itemId: 0004
   - itemName: "\u039C\u03B1\u03BE\u03B9\u03BB\u03AC\u03C1\u03B9"
-    icon: {fileID: 21300000, guid: 1cae20d2d650de04ebf5bbaecbfb5143, type: 3}
+    icon: {fileID: 21300000, guid: 5b7f6b1ad063b334fa5764ecadfcf878, type: 3}
     state: 0
     itemId: 0005
   - itemName: "\u039C\u03BF\u03BB\u03C5\u03B2\u03BF\u03B8\u03AE\u03BA\u03B7"
-    icon: {fileID: 21300000, guid: 70f1802414b5bdd4bbd9f11a23874a91, type: 3}
+    icon: {fileID: 21300000, guid: 3467c5aa968596543a872682e02b11b9, type: 3}
     state: 0
     itemId: 0006
   - itemName: "\u03A3\u03B1\u03C0\u03BF\u03CD\u03BD\u03B9 \u03B3\u03B9\u03B1 \u03C4\u03B1
       \u03C7\u03AD\u03C1\u03B9\u03B1"
-    icon: {fileID: 21300000, guid: db0808a86356a4a4798b9e6bdeccd2a4, type: 3}
+    icon: {fileID: 21300000, guid: bb244131dfe76f54980e596b62d59946, type: 3}
     state: 0
     itemId: 0007
   - itemName: "\u03A3\u03B1\u03C0\u03BF\u03CD\u03BD\u03B9 \u03B3\u03B9\u03B1 \u03C4\u03B1
       \u03C0\u03B9\u03AC\u03C4\u03B1"
-    icon: {fileID: 21300000, guid: 5027bc632ed8af7449c6598c1218fe51, type: 3}
+    icon: {fileID: 21300000, guid: 049b94cf7b8e0fb4aab58221ffa3a117, type: 3}
     state: 0
     itemId: 0008
   - itemName: "\u03A3\u03BA\u03BF\u03C5\u03C0\u03AF\u03B4\u03B9\u03B1"
-    icon: {fileID: 21300000, guid: 1d3d5bc13fe685d42b74b1f0d2ddf7ee, type: 3}
+    icon: {fileID: 21300000, guid: 1eb20cdafac761140ba9d1def566a18b, type: 3}
     state: 0
     itemId: 0009
   - itemName: "\u039A\u03C1\u03B5\u03BC\u03AC\u03C3\u03C4\u03C1\u03B1"
-    icon: {fileID: 21300000, guid: 3467c5aa968596543a872682e02b11b9, type: 3}
+    icon: {fileID: 21300000, guid: 94c35fd4b14346e41893b5616dce5d77, type: 3}
     state: 0
     itemId: 0010
   - itemName: "\u03A0\u03BF\u03C1\u03C4\u03B1\u03C4\u03AF\u03C6"
-    icon: {fileID: 21300000, guid: ebfa2412f830cb0439e887a1d8e10bd9, type: 3}
+    icon: {fileID: 21300000, guid: 35dcf935d0425a6448d9e42af5be6e36, type: 3}
     state: 0
     itemId: 0011
   - itemName: "\u03A6\u03C1\u03BF\u03C5\u03C4\u03B9\u03AD\u03C1\u03B1"
-    icon: {fileID: 21300000, guid: 1eb20cdafac761140ba9d1def566a18b, type: 3}
+    icon: {fileID: 21300000, guid: 048e8369eb106f345b80208be27a1c6a, type: 3}
     state: 0
     itemId: 0012
   - itemName: "\u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03B9\u03BA\u03AE \u03A3\u03BA\u03BF\u03CD\u03C0\u03B1"
-    icon: {fileID: 21300000, guid: 35010023aec05cb428870c8b4b4f2b4d, type: 3}
+    icon: {fileID: 21300000, guid: 648933fafe5a03245b46e31b591896f9, type: 3}
     state: 0
     itemId: 0013
   - itemName: "\u03A0\u03B5\u03C4\u03C3\u03AD\u03C4\u03B1 \u03BC\u03C0\u03AC\u03BD\u03B9\u03BF\u03C5"
-    icon: {fileID: 21300000, guid: 6c89d6afa8a2e9d4a8790e024fdcf99e, type: 3}
+    icon: {fileID: 21300000, guid: 35010023aec05cb428870c8b4b4f2b4d, type: 3}
     state: 0
     itemId: 0014
   - itemName: "\u039F\u03B4\u03BF\u03BD\u03C4\u03CC\u03B2\u03BF\u03C5\u03C1\u03C4\u03C3\u03B1"
@@ -1158,27 +1158,27 @@ MonoBehaviour:
     state: 0
     itemId: 0016
   - itemName: "\u039F\u03B4\u03BF\u03BD\u03C4\u03CC\u03BA\u03C1\u03B5\u03BC\u03B1"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+    icon: {fileID: 21300000, guid: 3afa688b7b2fc7e408cd27369c2dd918, type: 3}
     state: 0
     itemId: 0017
   - itemName: "\u03A0\u03AC\u03C0\u03BB\u03C9\u03BC\u03B1"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+    icon: {fileID: 21300000, guid: b442d20bb5af4f84880273e63129e667, type: 3}
     state: 0
     itemId: 0018
   - itemName: "\u03A0\u03BF\u03BD\u03C4\u03AF\u03BA\u03B9"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+    icon: {fileID: 21300000, guid: a7f7fe6a8dd3b5d4b8d47380abe36df1, type: 3}
     state: 0
     itemId: 0019
-  - itemName: "\u03C6\u03BF\u03C1\u03C4\u03B9\u03C3\u03C4\u03B7\u03C2 \u039A\u03B9\u03BD\u03B7\u03C4\u03BF\u03C5"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+  - itemName: "\u03A6\u03BF\u03C1\u03C4\u03B9\u03C3\u03C4\u03AE\u03C2 \u039A\u03B9\u03BD\u03B7\u03C4\u03BF\u03C5"
+    icon: {fileID: 21300000, guid: 906ea47da719eb54f8100d22df24792a, type: 3}
     state: 0
     itemId: 0020
   - itemName: "\u0393\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+    icon: {fileID: 21300000, guid: e9944c82e95221843a17178cadde7976, type: 3}
     state: 0
     itemId: 0021
   - itemName: "\u0392\u03B9\u03B2\u03BB\u03AF\u03BF"
-    icon: {fileID: 21300000, guid: 7a6c5a2167b2c8e4abb029c67be23d63, type: 3}
+    icon: {fileID: 21300000, guid: f05b522b7e9e1824e9eeca07f64154a3, type: 3}
     state: 0
     itemId: 0022
   contentPanel: {fileID: 1127138888}

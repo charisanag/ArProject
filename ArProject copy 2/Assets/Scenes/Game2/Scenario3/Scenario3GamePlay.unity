@@ -217,7 +217,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 952828241}
+  - {fileID: 1418142957}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -498,7 +498,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215231175}
-  m_Text: "\u03A8\u03C5\u03B3\u03B5\u03AF\u03BF <color=#8BC34A>1/4</color>"
+  m_Text: "\u0395\u03BD\u03C5\u03B4\u03B1\u03C4\u03B9\u03BA\u03AE <color=#8BC34A>1/4</color>"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1255,29 +1255,27 @@ MonoBehaviour:
   contentPanel: {fileID: 452647909}
   b: {fileID: 1212125897425630, guid: 9249b8f47494443b3afb5b1174dc1062, type: 2}
   sc1itemList:
-  - todoText: "\u03A8\u03C5\u03B3\u03B5\u03AF\u03BF"
+  - todoText: "\u0395\u03BD\u03C5\u03B4\u03B1\u03C4\u03B9\u03BA\u03AE"
     stepText: 1
     objectID: 0001
-    hint: "\u0395\u03BA\u03B5\u03AF \u03C3\u03C5\u03BD\u03C4\u03B7\u03C1\u03BF\u03CD\u03BD\u03C4\u03B1\u03B9
-      \u03C4\u03B1 \u03C6\u03B1\u03B3\u03B7\u03C4\u03AC \u03BC\u03B5\u03C4\u03AC \u03C4\u03BF
-      \u03BC\u03B1\u03B3\u03B5\u03AF\u03C1\u03B5\u03BC\u03B1"
-  - todoText: "\u03A0\u03B9\u03AC\u03C4\u03B1"
+    hint: "\u0395\u03AF\u03BD\u03B1\u03B9 \u03C3\u03B5 \u03BC\u03BF\u03C1\u03C6\u03AE
+      \u03BA\u03C1\u03AD\u03BC\u03B1\u03C2"
+  - todoText: Make Up
     stepText: 2
     objectID: 0002
-    hint: "\u0391\u03BD\u03C4\u03B9\u03BA\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF \u03C0\u03BF\u03C5
-      \u03C4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C4\u03BF\u03CD\u03BC\u03B5 \u03C4\u03BF
-      \u03C6\u03B1\u03B3\u03B7\u03C4\u03CC \u03C0\u03C1\u03AF\u03BD \u03C4\u03BF \u03B6\u03AD\u03C3\u03C4\u03B1\u03BC\u03B1"
-  - todoText: "\u03A6\u03BF\u03CD\u03C1\u03BD\u03BF\u03C2 \u03BC\u03B9\u03BA\u03C1\u03BF\u03BA\u03C5\u03BC\u03AC\u03C4\u03C9\u03BD"
+    hint: "\u0388\u03C7\u03B5\u03B9 \u03C4\u03BF \u03AF\u03B4\u03B9\u03BF \u03C7\u03C1\u03CE\u03BC\u03B1
+      \u03BC\u03B5 \u03C4\u03BF \u03B4\u03AD\u03C1\u03BC\u03B1"
+  - todoText: "\u03A1\u03BF\u03CD\u03B6"
     stepText: 3
     objectID: 0003
-    hint: "\u0397\u03BB\u03B5\u03BA\u03C4\u03C1\u03B9\u03BA\u03AE \u03C3\u03C5\u03C3\u03BA\u03B5\u03C5\u03AE
-      \u03B3\u03B9\u03B1 \u03B6\u03AD\u03C3\u03C4\u03B1\u03BC\u03B1 \u03C6\u03B1\u03B3\u03B7\u03C4\u03BF\u03CD."
-  - todoText: "\u039C\u03B1\u03C7\u03B1\u03B9\u03C1\u03BF\u03C0\u03AE\u03C1\u03BF\u03C5\u03BD\u03B1"
+    hint: "\u0395\u03AF\u03BD\u03B1\u03B9 \u03C3\u03B5 \u03BC\u03BF\u03C1\u03C6\u03AE
+      \u03C3\u03BA\u03CC\u03BD\u03B7\u03C2 \u03BA\u03B1\u03B9 \u03AD\u03C7\u03B5\u03B9
+      \u03C1\u03CC\u03B6 \u03C7\u03C1\u03CE\u03BC\u03B1"
+  - todoText: Highlighter
     stepText: 4
     objectID: 0004
-    hint: "\u0391\u03C0\u03B1\u03C1\u03B1\u03AF\u03C4\u03B7\u03C4\u03B1 \u03B1\u03BE\u03B5\u03C3\u03BF\u03C5\u03AC\u03C1
-      \u03B3\u03B9\u03B1 \u03C4\u03B7\u03BD \u03BB\u03AE\u03C8\u03B7 \u03C4\u03B7\u03C2
-      \u03C4\u03C1\u03BF\u03C6\u03AE\u03C2."
+    hint: "\u0395\u03AF\u03BD\u03B1\u03B9 \u03C3\u03B5 \u03BC\u03BF\u03C1\u03C6\u03AE
+      \u03C3\u03BA\u03CC\u03BD\u03B7\u03C2 \u03BA\u03B1\u03B9 \u03B3\u03C5\u03B1\u03BB\u03AF\u03B6\u03B5\u03B9"
 --- !u!114 &452647911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,33 +2383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbebff475c3e9d48be9b0c3ac5c30c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &952828241
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 'Game2Material
-
-    -3522'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 47c2e86b3a94ceae3e14991d6190e2e3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &954762895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,7 +4041,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256210683}
   m_LocalRotation: {x: 0.12906791, y: -0, z: -0, w: 0.9916358}
-  m_LocalPosition: {x: -1.364, y: 0.462, z: 0.323}
+  m_LocalPosition: {x: -0.964, y: 0.462, z: 0.323}
   m_LocalScale: {x: 0.018128583, y: 0.01931149, z: 0.78651}
   m_Children: []
   m_Father: {fileID: 2091220593}
@@ -4083,8 +4054,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256210683}
-  m_Text: "\u039C\u03B1\u03C7\u03B1\u03B9\u03C1\u03BF\u03C0\u03AE\u03C1\u03BF\u03C5\u03BD\u03B1
-    <color=#8BC34A>4/4</color>"
+  m_Text: "\u0397ighlighter <color=#8BC34A>4/4</color>"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4566,6 +4536,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1418142957
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 'Game2Material
+
+    68668'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 47c2e86b3a94ceae3e14991d6190e2e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1475312045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4763,7 +4760,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1564376749}
   m_LocalRotation: {x: 0.12906791, y: -0, z: -0, w: 0.9916358}
-  m_LocalPosition: {x: -1.507, y: 0.462, z: 0.323}
+  m_LocalPosition: {x: -0.374, y: 0.462, z: 0.323}
   m_LocalScale: {x: 0.018128583, y: 0.01931149, z: 0.78651}
   m_Children: []
   m_Father: {fileID: 1025457619}
@@ -4776,8 +4773,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1564376749}
-  m_Text: "\u03A6\u03BF\u03CD\u03C1\u03BD\u03BF\u03C2 \u03BC\u03B9\u03BA\u03C1\u03BF\u03BA\u03C5\u03BC\u03AC\u03C4\u03C9\u03BD
-    <color=#8BC34A>3/4</color>"
+  m_Text: "\u03A1\u03BF\u03CD\u03B6 <color=#8BC34A>3/4</color>"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4859,7 +4855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22200002, y: 0.96042186}
   m_AnchorMax: {x: 0.827, y: 1}
-  m_AnchoredPosition: {x: -6.500038, y: 0}
+  m_AnchoredPosition: {x: -6.5000305, y: 0}
   m_SizeDelta: {x: 105, y: 2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1584936176
@@ -5322,19 +5318,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u03A3\u03BA\u03BF\u03C0\u03CC\u03C2 \u03C4\u03BF\u03C5 \u03C0\u03B1\u03B9\u03C7\u03BD\u03B9\u03B4\u03B9\u03BF\u03CD
-    \u03B5\u03AF\u03BD\u03B1\u03B9 \u03B7 \u03B4\u03B9\u03B1\u03B4\u03B9\u03BA\u03B1\u03C3\u03AF\u03B1
-    \u03C0\u03BF\u03C5 \u03B1\u03BA\u03BF\u03BB\u03BF\u03C5\u03B8\u03B5\u03AF\u03C2
-    \u03B3\u03B9\u03B1 \u03BD\u03B1 \u03B6\u03B5\u03C3\u03C4\u03AC\u03BD\u03B5\u03B9\u03C2
-    \u03C4\u03BF \u03C6\u03B1\u03B3\u03B7\u03C4\u03CC ! \u0397 \u03C0\u03BB\u03B1\u03B9\u03BD\u03AE
+    \u03B5\u03AF\u03BD\u03B1\u03B9 \u03C3\u03C9\u03C3\u03C4\u03AE \u03C7\u03C1\u03AE\u03C3\u03B7
+    \u03C0\u03C1\u03BF\u03B9\u03CC\u03BD\u03C4\u03C9\u03BD \u03B3\u03B9\u03B1 \u03C4\u03B7\u03BD
+    \u03BF\u03BB\u03BF\u03BA\u03BB\u03AE\u03C1\u03C9\u03C3\u03B7 \u03B5\u03BD\u03CE\u03C2
+    \u03BC\u03B1\u03BA\u03B9\u03B3\u03B9\u03AC\u03B6 !  \u0397 \u03C0\u03BB\u03B1\u03B9\u03BD\u03AE
     \u03C3\u03C4\u03AE\u03BB\u03B7 \u03AD\u03C7\u03B5\u03B9 \u03B1\u03BD\u03B1\u03BA\u03B1\u03C4\u03B5\u03BC\u03AD\u03BD\u03B1
     \u03C4\u03B1 \u03B1\u03BD\u03C4\u03B9\u03BA\u03B5\u03AF\u03BC\u03B5\u03BD\u03B1
     \u03C0\u03BF\u03C5 \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03B2\u03C1\u03B5\u03AF\u03C2
     \u03BC\u03B5 \u03C4\u03B7\u03BD \u03C3\u03C9\u03C3\u03C4\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC.
-    \u03A3\u03C4\u03CC\u03C7\u03B5\u03C5\u03C3\u03B1\u03B9 \u03BC\u03B5 \u03C4\u03B7\u03BD
+    \u03A3\u03C4\u03BF\u03C7\u03B5\u03CD\u03B5\u03B9\u03C2 \u03BC\u03B5 \u03C4\u03B7\u03BD
     \u03BA\u03AC\u03BC\u03B5\u03C1\u03B1 \u03C4\u03BF Marker \u03C0\u03BF\u03C5 \u03B2\u03C1\u03AE\u03C3\u03BA\u03B5\u03C4\u03B1\u03B9
     \u03C0\u03AC\u03BD\u03C9 \u03B1\u03C0\u03CC \u03C4\u03BF \u03B1\u03BD\u03C4\u03B9\u03BA\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF
     \u03C0\u03BF\u03C5 \u03C0\u03B9\u03C3\u03C4\u03B5\u03CD\u03B5\u03B9\u03C2 \u03BA\u03B1\u03B9
-    \u03C0\u03AC\u03C4\u03B1 \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF \u03C0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7!"
+    \u03C0\u03B1\u03C4\u03AC\u03C2 \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF
+    \u03C0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7!"
 --- !u!222 &1808738377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5911,7 +5908,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974490386}
-  m_Text: "\u03A0\u03B9\u03AC\u03C4\u03B1 <color=#8BC34A>2/4</color>"
+  m_Text: Make Up <color=#8BC34A>2/4</color>
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
