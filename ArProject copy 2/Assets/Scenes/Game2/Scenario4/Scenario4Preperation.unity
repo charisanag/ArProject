@@ -548,12 +548,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 40
-    m_Right: 40
-    m_Top: 20
-    m_Bottom: 20
+    m_Left: 30
+    m_Right: 30
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Text: "\u03A4\u03BF\u03C0\u03BF\u03B8\u03B5\u03C4\u03AE\u03C3\u03C4\u03B5 \u03C4\u03B1
     Markers \u03C0\u03BF\u03C5 \u03B1\u03BD\u03B1\u03B3\u03C1\u03AC\u03C6\u03B5\u03C4\u03B1\u03B9
     \u03B1\u03C0\u03BF \u03C0\u03AF\u03C3\u03C9 \u03C4\u03BF\u03C5\u03C2 0001 \u03BC\u03B5\u03C7\u03C1\u03B9
-    0004 \u03C3\u03C4\u03B9\u03C2 \u03B1\u03BD\u03C4\u03AF\u03C3\u03C4\u03BF\u03B9\u03C7\u03B5\u03C2
+    0005 \u03C3\u03C4\u03B9\u03C2 \u03B1\u03BD\u03C4\u03AF\u03C3\u03C4\u03BF\u03B9\u03C7\u03B5\u03C2
     \u03B8\u03AD\u03C3\u03B5\u03B9\u03C2 \u03CC\u03C0\u03C9\u03C2 \u03B2\u03BB\u03AD\u03C0\u03B5\u03C4\u03B5
     \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 !"
 --- !u!222 &1022450278
