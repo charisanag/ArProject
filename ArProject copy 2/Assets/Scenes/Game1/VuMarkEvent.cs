@@ -49,12 +49,6 @@ public class VuMarkEvent : MonoBehaviour
         DontDestroyOnLoad(canvas);
     }
 
-   
-
-
-   
-
-
     private void ButtonManager_onClickItem(ButtonManager obj)
     {
         //onClick event get text from item and render object if exists
@@ -75,7 +69,7 @@ public class VuMarkEvent : MonoBehaviour
             vuMarkManager.RegisterVuMarkDetectedCallback(onVuMarkDetected);
             vuMarkManager.RegisterVuMarkLostCallback(onVuMarkLost);
        
-        // vuMarkManager.RegisterVuMarkBehaviourDetectedCallback();
+        
        
         // Deactivate all models 
         foreach (GameObject item in modelList){
@@ -124,13 +118,8 @@ public class VuMarkEvent : MonoBehaviour
                     canvas.SetActive(false);
                     modelList[i].SetActive(true);
                   }
-
               }
           }
-
-
-        // SetActive(getVuMarkID(target));
-
     }
 
     private void onVuMarkLost(VuMarkTarget target){
@@ -138,7 +127,6 @@ public class VuMarkEvent : MonoBehaviour
         canvas.SetActive(false);
        
         String tartgLost = getVuMarkID(target);
-        Debug.Log(tartgLost + "   XATHIKEEEEEEEE");
 
         // Deactivate model by model number
         for (int i = 0; i < modelIdList.Count; i++)
@@ -159,10 +147,9 @@ public class VuMarkEvent : MonoBehaviour
 
             for (int i = 0; i < modelIdList.Count; i++)
             {
-                // string s1 = getVuMarkID(targ);
                 string s2 = modelIdList[i];
 
-                if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) /*&& modelList[i].active==false*/)
+                if (selectedItem.Equals(s2) && selectedItem.Equals(targetFound) )
                 {
                     canvas.SetActive(false);
                     modelList[i].SetActive(true);
@@ -186,14 +173,8 @@ public class VuMarkEvent : MonoBehaviour
                                 vuMarkManager.UnregisterVuMarkLostCallback(onVuMarkLost);
                                 //TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
                             }
-
-                        }
-                      
-                      
+                        } 
                     }
-                        
-
-
                 }
             }
         }
@@ -217,10 +198,6 @@ public class VuMarkEvent : MonoBehaviour
               }
         }
     }
-   
- 
-
-
     public void showGUI(bool showgui){
         if(showgui==false){
             canvas.SetActive(false);
@@ -228,9 +205,6 @@ public class VuMarkEvent : MonoBehaviour
         else{
             canvas.SetActive(true);
         }
-    }
-
-
-    
+    }  
 }
 

@@ -73,11 +73,8 @@ public class Scenario1VumarkEvent : MonoBehaviour
         for (int i = 0; i < modelIdList.Count; i++)
         {
             if (modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound)==false )
-            {
-                
+            {    
                 comfirmObjectCanvas.SetActive(true);
-                //  stateCanvas = true;
-                //  showGUI(stateCanvas);
             }
             else if(modelIdList[i].Equals(targetFound) && sidepanelobject.itemIsFounded(targetFound) == true)
             {
