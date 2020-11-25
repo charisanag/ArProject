@@ -6,4 +6,5 @@ The main Project Folder Structure is in the **Assets** Folder after creating a n
 
 - **3D Object Photos** : stored the images that represent each 3D object in the first Game.
 - **3D Objects** : stored the 3D object (fbx or 3DS files) that is projected above the marker.
-- **
+- **Images** : stored the images from fisrt game preperation scene.
+- **Prefabs** : stored GameObjects that are reusable such as an item of a list, the side panel, buttons. 
